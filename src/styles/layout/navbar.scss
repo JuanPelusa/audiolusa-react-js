@@ -1,0 +1,133 @@
+//* Header Nav *//
+
+.top-header {
+    background-color: #5f9ea0;
+    height: 22px;
+    margin-right: 10px;
+    font-size: $small;
+    font-weight: 600;
+    text-align: center;
+    border-bottom: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    .nav-link {
+        color: black; 
+        text-decoration: none;
+        list-style: none;  
+        margin: 0;
+        padding: 0px 5px 0px 5px;
+        font-weight: lighter;
+        @include desktop { 
+            font-size: $small; 
+            font-weight: normal;
+        }
+    }
+    @include tablet {
+        display: none
+    }
+    @include tablet-max {
+        display: none;
+    }
+    @include mobile-index {
+        display: none;
+    }
+    @include desktop { 
+        align-items: center;
+    }
+}
+.header-one {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: $xlarge;
+    font-weight: lighter;
+    padding-left: 0px;
+    @include desktop {
+        font-size: $medium;
+        font-weight: normal;
+    }
+    @include mobile-index {
+        font-weight: normal;
+    }
+}
+.navbar {
+    @include desktop {
+        border-bottom: none;
+        border-top: none;
+    .logo-nav {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 8px;
+    } 
+    .navbar-brand {
+        display: none;
+        } 
+    }
+}    
+.navbar-brand {
+    padding-top: none;
+    padding-bottom: none;
+    margin-right: none;
+    text-decoration: none;
+    white-space: none;
+    img {
+        height: 65px;
+    }
+}
+.nav-first {
+    justify-content: center;
+}
+#navmenu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    @include desktop {
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 5px;
+        width: 80px;
+        border: 1px solid #5f9ea0;
+        text-align: center;
+        text-indent: 0px;
+    }
+    .navbar-search {
+        width: 100px;
+        height: 20px;
+        border: 3px solid #5f9ea0;
+        border-radius: 75px;
+        text-indent: 5px;
+        font-weight: 400;
+        font-size: $small;
+    }
+}   
+#seeCart {
+    display: flex;
+    align-items: center;
+    img {
+        width: 2rem;
+    }
+
+}
+
+//* Navbar Collapse *//
+
+.navbar-collapse {
+    flex-basis: 100%;
+    flex-grow: 1;
+    align-items: center;
+}
+.navbar-toggler {
+    @include desktop {
+        border: none;
+        padding-right: 0px;
+        transition: all 0.30s ease;
+        &:hover, :focus {
+            transform: rotate(90deg);
+            transition: all 0.30s ease;
+            text-decoration: none;
+            outline: 0;
+            box-shadow: none;
+        }
+    }    
+}

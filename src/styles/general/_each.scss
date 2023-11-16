@@ -1,0 +1,14 @@
+//* Eachys *//
+
+$colors: (
+    first: rgb(217, 30, 30),
+    second: white,
+    third: rgb(16, 109, 30),
+);
+
+@each $color-name, $color-value in $colors {
+    .bk-#{$color-name}
+    {
+        color: $color-value;
+    }
+}

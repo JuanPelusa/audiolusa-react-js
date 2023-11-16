@@ -1,0 +1,134 @@
+//* Footer *//
+
+.foot {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    margin-top: 20px;
+    font-style: normal;
+    font-weight: 350;
+    border-top: 1px solid;
+    border-top-width: thin;
+    border-top-style: outset;
+    background-color: rgb(244, 244, 244);
+    @include tablet-portrait{
+        margin-top: 20px;
+    }
+    @include tablet {
+        background-color: rgb(122, 121, 121);
+    }
+    @include tablet-max {
+        background-color: rgb(121, 121, 121);
+    }
+    @include mobile-index {
+        flex-direction: column;
+        justify-content: center;
+        height: 120px;
+        font-size: $small;
+        background-color: rgb(121, 121, 121);
+    }
+    .fluffy {
+        @include tablet {
+            display: none
+        }
+        @include tablet-max {
+            display: none;
+        }
+        @include mobile-index {
+            display: none;
+        }
+    }
+}
+
+//* Rights *//
+
+.copy {
+    text-align: center;
+    font-size: $small;
+    p {
+        margin-bottom: 0em;
+    }
+    @include mobile {
+        padding-bottom: 5px;
+        margin: 0px;
+    }
+    @include desktop {
+        padding-top: 5px;
+        padding-bottom: 0px;
+    }
+}
+
+//* Foot Links *//
+
+.center-foot {
+    font-size: $xlarge;
+    margin-left: 30px;
+    padding-bottom: 5px;
+    a {
+        text-decoration: none;
+        font-weight: lighter;
+        @include desktop { 
+            font-size: $medium; 
+            font-weight: normal;
+        }
+    }
+    @include desktop { 
+        margin: 10px 0px 0px 0px;
+        align-items: center;
+    }
+}
+
+//* Social *//
+
+.facelogo {
+    width: 20px;
+    height: auto;
+    @include desktop {
+        width: 20px;
+        height: auto;
+    }
+}
+.twlogo {
+    width: 34px;
+    height: auto;
+    padding-left: 12px ;
+    @include desktop {
+        width: 33px;
+        height: auto;
+        padding-left: 12px ;
+    }
+}
+.instalogo {
+    width: 30px;
+    height: auto;
+    padding-left: 6px;
+    @include desktop {
+        width: 30px;
+        height: auto;
+        padding-left: 10px;
+    }
+}
+.ytlogo {
+    align-items: center;
+    width: 36px;
+    height: auto;
+    margin-top: 2px;
+    padding-left: 6px;
+    @include desktop {
+        width: 35px;
+        height: auto;
+        margin-top: 0px;
+        padding-left: 10px;
+    }    
+}
+.onlyAu {
+    @media (width: 820px) {
+        position: fixed;
+        bottom: 0;
+    }
+}

@@ -1,0 +1,102 @@
+//* Modal Header User *//
+
+.modal-header {
+    display: flex;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+    border-bottom: none;
+    padding: 18px 16px 30px 16px;
+}
+.modal-body {
+    padding: 0px 40px 20px 40px;
+    color: black;
+}
+.check {
+    justify-content: center;
+}
+.form-check .form-check-input {
+    border: 1px solid skyblue;
+    float: none;
+    margin-left: none;
+    &:focus {
+        box-shadow: 0 0 0 0.10rem rgba(13,110,253,.25);
+    }
+}
+.reset-pass {
+    font-size: $medium;
+}
+.sign-label {
+    justify-content: start;
+    align-items: start;
+}
+.signInBtn {
+    width: 100%;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+}
+.or {
+    text-align: center;
+}
+.hr-lines{
+    position: relative;
+    max-width: 500px;
+    margin: 40px 0px;
+    align-items: center;
+    &::before{
+        content:" ";
+        height: 2px;
+        width: 130px;
+        background: rgb(217, 30, 30);
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        @include mobile-index {
+            width: 80px;
+        }
+    }
+    &::after {
+        content:" ";
+        height: 2px;
+        width: 130px;
+        background: rgb(217, 30, 30);
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        @include mobile-index {
+            width: 80px;
+        }
+    }
+}
+.modal-lg, .modal-xl {
+    @include mobile-small {
+        margin: 18px;
+    }
+    @media (min-width: 992px){
+        --bs-modal-width: 500px;
+    }
+}
+.register-title {
+    margin-bottom: 30px;
+}
+.btn-close {
+    position: absolute;
+    padding: 0.50rem;
+    border: 1px solid black;
+    border-radius: 50%;
+    background-color: rgb(217, 30, 30);
+    --bs-btn-close-opacity: 1;
+    --bs-btn-close-focus-shadow: 0 0 0 0.25rem rgb(0 0 0 / 25%);
+    top: -15px;
+    right: -15px;
+    &:hover {
+        opacity: 1;
+    }
+    @include mobile-index {
+        top: -10px;
+        right: -10px;
+    }
+}
