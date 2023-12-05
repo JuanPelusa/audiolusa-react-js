@@ -3,6 +3,7 @@ import Fluff from '/images/fluff-std-logo-big-index.png'
 import LogoBrand from '/images/logo-brand-3d.png'
 import User from '/images/user-128.png'
 import CartWidget from'../CartWidget/CartWidget'
+import { Link } from 'react-router-dom'
 
 function NavBar() {
   return (
@@ -20,7 +21,7 @@ function NavBar() {
       </Nav>
       <Navbar collapseOnSelect expand="xl" className="bg-body-tertiary">
         <Container fluid className='header-one'>
-          <Nav.Link href="index.html"><img src={Fluff} alt="Fluff image Audiolusa" className="logo-nav d-flex d-xl-none" /></Nav.Link>
+          <Link to="/"><img src={Fluff} alt="Fluff image Audiolusa" className="logo-nav d-flex d-xl-none" /></Link>
           <Navbar.Toggle aria-controls="responsive-navbar-nav">
             <span id="icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="black" className="bi bi-three-dots" viewBox="0 0 16 16">
@@ -33,25 +34,25 @@ function NavBar() {
             <Container fluid>
             <Nav className='nav-first'>
               <div className='brand'>
-              <Nav.Link href="index.html" className="navbar-brand">
+              <Link to="/" className="navbar-brand">
                 <img src={LogoBrand} 
                 alt="Fluff logo Audiolusa"  className="fluff" />
-              </Nav.Link>
+              </Link>
                 </div>
                   <div id='navmenu'>
-                    <Nav.Link className="nav-link hdr" href="./index.html">Home</Nav.Link>
-                      <Nav.Link className="nav-link hdr" href="./pages/speakers.html">Speakers</Nav.Link>
-                        <Nav.Link className="nav-link hdr" href="./pages/headphones.html">Headphones</Nav.Link>
-                          <Nav.Link className="nav-link hdr" href="./pages/wireless.html">Wireless</Nav.Link>
-                        <Nav.Link className="nav-link hdr d-flex d-xl-none" href="./pages/services.html">Services</Nav.Link>                                
-                      <Nav.Link href="#!" className="nav-link hdr d-flex d-xl-none">
+                    <Link to="/" className="nav-link hdr">Home</Link>
+                      <Link to="/category/speakers" className="nav-link hdr">Speakers</Link>
+                        <Link to="/category/headphones" className="nav-link hdr">Headphones</Link>
+                          <Link to="/category/wireless" className="nav-link hdr">Wireless</Link>
+                        <Link className="nav-link hdr d-flex d-xl-none" to="/services">Services</Link>                                
+                      <Link to="#!" className="nav-link hdr d-flex d-xl-none">
                         <img src={User} 
                         alt="login"  className="navbar-user" data-bs-toggle="modal" data-bs-target="#exampleModal" width={35}/>
-                      </Nav.Link>
-                    <Nav.Link >                            
+                      </Link>
+                    <Link>                            
                       <input type="text" placeholder="Search" className="navbar-search" />
-                    </Nav.Link>
-                  <CartWidget /> 
+                    </Link>
+                  <Link to="/cart"> <CartWidget /> </Link>
                 </div>
               </Nav>
             </Container>

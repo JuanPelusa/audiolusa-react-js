@@ -1,0 +1,135 @@
+//* Products General Page *//
+
+//* Tittle refference for every product page *//
+
+.main-contents {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: $xlarge;
+    color: black;
+    font-style: normal;
+    font-weight: 550;
+    h1, h3, span {
+        text-align: center;
+        padding: $xlarge;
+        font-weight: lighter;
+        font-size: $large;
+    }
+    @media only screen and (max-width: 1200px) {
+        color: black;
+        padding: 5px;
+        font-style: normal;
+        font-weight: lighter;
+        h1, h3, span {
+            padding: 5px;
+            font-size: $medium;
+        }   
+    }
+}
+
+//* Indication Only For Mobile *// 
+
+.display-info{
+    justify-content: center;
+    align-items: center;
+    font-style: normal;
+    font-weight: 350;
+    font-size: $large;
+    color: grey;
+    @media only screen and (max-width: 1200px) {
+        font-size: $small;
+    }
+}
+
+//* Products Containers *//
+
+#productTitle {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
+    @media only screen and (max-width: 1200px) { 
+        width: 100%;
+        margin: auto;
+    }
+}
+.product-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    width: 250px;
+    height: 400px;
+    margin:10px;
+    box-shadow: 0 0 20px grey;
+    border-radius: 5px;
+    color: black;
+    img {
+        width: 100%;
+        height: 300px;
+    }
+    p {
+        color: grey;
+    margin-bottom: 5px;
+        font-size: $small;
+        padding: 0px, 10px, 5px, 10px;
+    }
+    @media only screen and (max-width: 1200px) {
+        width:250px;
+        margin:5px;
+        img {
+            width: 250px;
+            height: 250px;
+        } 
+    }
+}
+
+//* Product Info *//
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-style: normal;
+    font-weight: lighter;
+    margin-bottom: 10px;
+    padding: 10px;
+    color: black;
+
+@media only screen and (max-width: 1200px)
+    {
+        font-size: $small;
+    }
+}
+.infoPrice {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: bolder;
+}
+
+.add {
+    @extend %buttons;
+    margin-top: 10px;
+    font-size: $medium;
+    border: 1px solid grey;
+    background-color: #ff8c00;
+    transition: all 200ms ease-in-out;
+    &:hover {
+        color: whitesmoke;
+        background-color:forestgreen;
+        cursor: pointer;
+        transform: scale (1.5) ease-in-out;
+        transform: translateY(-3px);
+        transition: all 0.3s ease-in-out;
+    }
+}
