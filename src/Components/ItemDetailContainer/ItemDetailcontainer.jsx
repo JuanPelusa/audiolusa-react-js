@@ -28,7 +28,6 @@ const ItemDetailContainer = () => {
             </div>
         </div>
     )
-
 }
  
 export default ItemDetailContainer

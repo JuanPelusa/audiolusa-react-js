@@ -12,9 +12,9 @@ function Footer() {
       <div className="container-fluid foot">
         <div className="social">    
           <Link to="https://es-la.facebook.com/" target="_blank"><img src={Facebook} 
-          alt="facebook" className="facelogo" /></Link>
-          <Link to="https://twitter.com/?lang=es" target="_blank"><img src={X} alt="twitter" className="twlogo" /></Link>
-          <Link to="https://www.instagram.com/" target="_blank"><img src={Insta} alt="instagram" className="instalogo" /></Link>
+            alt="facebook" className="facelogo" /></Link>
+              <Link to="https://twitter.com/?lang=es" target="_blank"><img src={X} alt="twitter" className="twlogo" /></Link>
+            <Link to="https://www.instagram.com/" target="_blank"><img src={Insta} alt="instagram" className="instalogo" /></Link>
           <Link to="https://www.youtube.com/" target="_blank"><img src={YouTube} alt="youtube" className="ytlogo" /></Link>
         </div>
         <div className="fluffy">
@@ -22,9 +22,8 @@ function Footer() {
         </div>
           <div className="center-foot d-flex d-xl-none">
             <Link to="/pages/contact.html">Contact</Link>
-            <span>-</span>
+              <span>-</span>
             <Link to="/pages/about-us.html">About Us</Link>
-            
           </div>
         <div className="copy">
           <p><img src={CopyIcon} alt="" width={30} />JP'S 2023</p>
