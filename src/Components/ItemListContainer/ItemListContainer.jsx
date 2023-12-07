@@ -2,7 +2,6 @@ import { useState, useEffect} from "react"
 import { useParams } from "react-router-dom"
 import allProducts from '../json/allProducts.json'
 import ItemList from "../ItemList/ItemList"
-import { Container} from "react-bootstrap"
 
 const ItemListContainer = () => {
 
@@ -27,12 +26,11 @@ const ItemListContainer = () => {
 
     return (
         <main>
-            <Container data-aos="fade-up" data-aos-duration="300" data-aos-easing="ease-in-out">
-                <div>
-                    <h4 className="hi">- Some of our products -</h4>
+            <div id="cards-container__products" className="container-products" data-aos="fade-up" data-aos-duration="200" data-aos-easing="ease-in-out">
+                <div id="productTitle" className="container-fluid">
+                <ItemList item={item} />
                 </div>
-                <ItemList item={item} /> 
-            </Container>
+              </div>
         </main>
 
     )

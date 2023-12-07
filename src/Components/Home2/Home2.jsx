@@ -1,4 +1,21 @@
 import React from 'react'
+import Focal from '/images/brand focal.gif'
+import Klipsch from '/images/klipsch.png'
+import Polk from '/images/polkaudio.png'
+import Bw from '/images/bw-logo-4017.png'
+import Yamaha from '/images/yamaha-logo.png'
+import Hifiman from '/images/hifiman.webp'
+import Dali from '/images/dali-red.png'
+import Mcintosh from '/images/mcintosh.webp'
+import Marantz from '/images/marantz-logo.gif'
+import Cambridge from '/images/logo cambridge audio.png'
+import Onkyo from '/images/onkyo.gif'
+import Room2 from '/images/audio room 2.jpg'
+import Nautilus from '/images/Loudspeakers_Nautilus_desktop.jpg'
+import Cx5050 from '/images/Highres_CX_5050.jpg.webp'
+import FocalPlain from '/images/focal_home_avion.jpg'
+import DenonAvr from '/images/Denon_EU_AVR_CategoryBanner_20.jpg'
+import Series600 from '/images/Loudspeakers_600SeriesSBS_Desktop.jpg'
 
 const Home2 = () => {
   return (
@@ -8,73 +25,73 @@ const Home2 = () => {
           <h4>- Brands we proudly sell -</h4>
           <div className="row">
             <div className="col logo" data-aos="fade-up">
-              <img src="/images/brand (1).gif" alt="Focal Logo" />
+              <img src={Focal} alt="Focal Logo" />
             </div>
             <div className="col logo" data-aos="fade-up">
-              <img src="/images/klipsch.png" alt="Klipsch logo" />
+              <img src={Klipsch} alt="Klipsch logo" />
             </div>
             <div className="col logo" data-aos="fade-up">
-              <img src="/images/polkaudio.png" alt="Polk logo" />
+              <img src={Polk} alt="Polk logo" />
             </div>
             <div className="col logo" data-aos="fade-up">
-              <img src="/images/bw-logo-4017.png" alt="Bowers & Wilkins logo" />
+              <img src={Bw} alt="Bowers & Wilkins logo" />
             </div>
             <div className="col logo" data-aos="fade-up">
-              <img src="/images/yamaha-logo.png" alt="Yamaha logo" />
+              <img src={Yamaha} alt="Yamaha logo" />
             </div>
             <div className="col logo" data-aos="fade-up">
-              <img src="/images/hifiman.webp" alt="Hifiman logo" />
+              <img src={Hifiman} alt="Hifiman logo" />
             </div>
             <div className="col logo" data-aos="fade-up">
-              <img src="/images/dali-red.png" alt="Dali speakers logo" />
+              <img src={Dali} alt="Dali speakers logo" />
             </div>
             <div className="col logo" data-aos="fade-up">
-              <img src="/images/mcintosh.webp" alt="Mcintosh logo" />
+              <img src={Mcintosh} alt="Mcintosh logo" />
             </div>
             <div className="col logo" data-aos="fade-up">
-              <img src="/images/marantz-logo.gif" alt="Marantz logo" />
+              <img src={Marantz} alt="Marantz logo" />
             </div>
             <div className="col logo" data-aos="fade-up">
-              <img src="/images/logo cambridge audio.png" alt="Cambridge audio logo" />
+              <img src={Cambridge} alt="Cambridge audio logo" />
             </div>
             <div className="col logo" data-aos="fade-up">
-              <img src="/images/onkyo.gif" alt="Onkyo logo" />
+              <img src={Onkyo} alt="Onkyo logo" />
             </div>
           </div>
         </div>
     <div className="worksGallery" data-aos="fade-up">
           <div className="itemGallery">
-            <img className="imgGallery" src="/images/audio room 2.jpg" alt="Music listening with a minimal touch" />
+            <img src={Room2} className="imgGallery" alt="Music listening with a minimal touch" />
             <div>
               <h3 className="pBottom">Armony of light</h3>
             </div>
           </div>
           <div className="itemGallery">
-            <img className="imgGallery" src="/images/Loudspeakers_Nautilus_desktop.jpg" alt="The Bowers and Wilkins nautilus are from another world" />
+            <img src={Nautilus} className="imgGallery" alt="The Bowers and Wilkins nautilus are from another world" />
             <div>
               <h3 className="pBottom">Power of the seas</h3>
             </div>
           </div>
           <div className="itemGallery">
-            <img className="imgGallery" src="/images/Highres_CX_5050.jpg.webp" alt="Exquisite British sound" />
+            <img src={Cx5050} className="imgGallery" alt="Exquisite British sound" />
             <div>
               <h3 className="pBottom">Pure enjoy</h3>
             </div>
           </div>
           <div className="itemGallery" data-aos="fade-up">
-            <img className="imgGallery" src="/images/focal_home_avion.jpg" alt="The best companion for an audiophile traveller" />
+            <img src={FocalPlain} className="imgGallery" alt="The best companion for an audiophile traveller" />
             <div>
               <h3 className="pBottom">Joy of travel</h3>
             </div>
           </div>
           <div className="itemGallery" data-aos="fade-up">
-            <img className="imgGallery" src="/images/Denon_EU_AVR_CategoryBanner_20.jpg" alt="Pure Denon sound" />
+            <img src={DenonAvr} className="imgGallery" alt="Pure Denon sound" />
             <div>
               <h3 className="pBottom">Call to action</h3>
             </div>
           </div>
           <div className="itemGallery" data-aos="fade-up">
-            <img className="imgGallery" src="/images/Loudspeakers_600SeriesSBS_Desktop.jpg" alt="Finest and unique 600 series from B&W" />
+            <img src={Series600} className="imgGallery" alt="Finest and unique 600 series from B&W" />
             <div>
               <h3 className="pBottom">The warmth of home</h3>
             </div>

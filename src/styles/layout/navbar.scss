@@ -104,10 +104,13 @@
 #seeCart {
     display: flex;
     align-items: center;
+    color: black;
     img {
         width: 2rem;
     }
-
+    span {
+        text-decoration: none;
+    }
 }
 
 //* Navbar Collapse *//

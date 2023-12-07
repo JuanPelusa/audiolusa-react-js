@@ -1,25 +1,33 @@
+import { Link } from 'react-router-dom'
+import Facebook from '/images/black_fb_social media_facebook_facebook logo_social network_icon.png'
+import X from '/images/x-social-media-black-icon.png'
+import Insta from  '/images/black_instagram_icon.png'
+import YouTube from '/images/black_youtube_icon.png'
+import FluffBig from '/images/fluff-std-logo-big.png'
+import CopyIcon from '/images/icons8-copyright-48.png'
+
 function Footer() {
     return (
         <footer>
       <div className="container-fluid foot">
         <div className="social">    
-          <a href="https://es-la.facebook.com/" target="_blank"><img src="/images/black_fb_social media_facebook_facebook logo_social network_icon.png" 
-          alt="facebook" className="facelogo" /></a>
-          <a href="https://twitter.com/?lang=es" target="_blank"><img src="/images/x-social-media-black-icon.png" alt="twitter" className="twlogo" /></a>
-          <a href="https://www.instagram.com/" target="_blank"><img src="/images/black_instagram_icon.png" alt="instagram" className="instalogo" /></a>
-          <a href="https://www.youtube.com/" target="_blank"><img src="/images/black_youtube_icon.png" alt="youtube" className="ytlogo" /></a>
+          <Link to="https://es-la.facebook.com/" target="_blank"><img src={Facebook} 
+          alt="facebook" className="facelogo" /></Link>
+          <Link to="https://twitter.com/?lang=es" target="_blank"><img src={X} alt="twitter" className="twlogo" /></Link>
+          <Link to="https://www.instagram.com/" target="_blank"><img src={Insta} alt="instagram" className="instalogo" /></Link>
+          <Link to="https://www.youtube.com/" target="_blank"><img src={YouTube} alt="youtube" className="ytlogo" /></Link>
         </div>
         <div className="fluffy">
-        <img src="/images/fluff-std-logo-big.png" alt="logo" width={60} />
+        <img src={FluffBig} alt="logo" width={60} />
         </div>
           <div className="center-foot d-flex d-xl-none">
-            <a href="./pages/contact.html">Contact</a>
+            <Link to="/pages/contact.html">Contact</Link>
             <span>-</span>
-            <a href="./pages/about-us.html">About Us</a>
+            <Link to="/pages/about-us.html">About Us</Link>
             
           </div>
         <div className="copy">
-          <p><img src="/images/icons8-copyright-48.png" alt="" width={30} />JP'S 2023</p>
+          <p><img src={CopyIcon} alt="" width={30} />JP'S 2023</p>
         </div>
       </div>
     </footer>

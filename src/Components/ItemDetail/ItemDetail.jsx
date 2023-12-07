@@ -1,23 +1,28 @@
 import React from 'react'
+import Counter from '../Counter/Counter'
+const currencyType = "usd";
 
-const ItemDetail = ({item}) => {
+const ItemDetail = ({ item }) => {
   return (
-    <div className="row cols-4">
-        <img className="cartProduct" src={item.image} />
+    <div id='productTitle'>
+    <div className="product-card-detail">
+        <img src={item.image} alt={item.name} />
         <div>
-        <h5>{item.name}</h5>
-        <p>{item.description}</p>
-        <h5>{currencyType} {item.price}.-</h5>
+        <h5 className="title-card">{item.name}</h5>
+        <p className="description">{item.description}</p>
+        <p>Specs: {item.specs}</p>
+        <p className="infoPrice">{currencyType} {item.price}.-</p>
         </div>
-        <button className="btn btn-outline-secondary mt-auto mb-auto" id="botonRestar">-</button>
         <p className="cartProductQuantity">Qty: 
         {item.quantity}
         </p>
-        <button className="btn btn-outline-secondary mt-auto mb-auto" id="botonAgregar">+{item.id}</button>
-        <button className="eraseProduct"><p><i aria-hidden="true" 
-        className="fa fa-trash"></i></p>{item.id}</button>
+        <p>Stock: {item.stock}</p>
+        <div>
+          <Counter />
+        </div>
+        <button class="add" id={item.id}>BUY NOW</button>
     </div>
-    
+    </div>
   )
 }
 

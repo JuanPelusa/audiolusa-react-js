@@ -23,8 +23,6 @@ body {
   }
 }
 .carousel-inner {
-  border-bottom-width: thin;
-  border-bottom-style: inset;
   @include mobile-index {
       overflow: hidden;
       background-color: rgb(121, 121, 121);

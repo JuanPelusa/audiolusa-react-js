@@ -10,13 +10,12 @@ function NavBar() {
     <header>
       <Nav>
           <Container fluid className='top-header'>
-            <Nav.Link className='nav-link' href="./pages/contact.html">Contact</Nav.Link>
-              <Nav.Link className='nav-link' href="./pages/about-us.html">About Us</Nav.Link>
-              <Nav.Link className="nav-link" 
-                href="./pages/services.html">Services</Nav.Link>
-            <Nav.Link href="#!" className="nav-link navbar-user" 
+            <Link to="/pages/contact.html" className='nav-link'>Contact</Link>
+              <Link to="/pages/about-us.html" className='nav-link'>About Us</Link>
+              <Link to="pages/services.html" className='nav-link'>Services</Link>
+            <Link to="#!" className="nav-link navbar-user" 
             alt="login" data-bs-toggle="modal" 
-            data-bs-target="#exampleModal">Sign</Nav.Link>
+            data-bs-target="#exampleModal">Sign</Link>
           </Container>
       </Nav>
       <Navbar collapseOnSelect expand="xl" className="bg-body-tertiary">
