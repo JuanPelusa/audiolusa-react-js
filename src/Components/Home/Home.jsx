@@ -7,7 +7,7 @@ import Pop from '/images/ct-pop.jpg'
 
 const Home = () => {
   return (
-    <main className="begin-site">
+    <div className="begin-site">
       <Carousel id="carouselExampleAutoplaying" className="carousel slide" data-bs-ride="carousel" data-aos="fade-up" data-aos-duration="200" data-aos-easing="ease-in-out">
         <Carousel.Item interval={2000}>
           <img src={Urban} className="carousel-img d-block w-100" 
@@ -26,7 +26,7 @@ const Home = () => {
           alt="Color and magic of pop combined with this Stella utopia" />
         </Carousel.Item>
       </Carousel>        
-    </main>
+    </div>
   )
 }
 

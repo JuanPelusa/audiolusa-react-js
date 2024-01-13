@@ -7,8 +7,8 @@ import FluffBig from '/images/fluff-std-logo-big.png'
 import CopyIcon from '/images/icons8-copyright-48.png'
 
 function Footer() {
-    return (
-        <footer>
+  return (
+    <footer>
       <div className="container-fluid foot">
         <div className="social">    
           <Link to="https://es-la.facebook.com/" target="_blank"><img src={Facebook} 
@@ -30,7 +30,7 @@ function Footer() {
         </div>
       </div>
     </footer>
-    )
+  )
 }
 
 export default Footer

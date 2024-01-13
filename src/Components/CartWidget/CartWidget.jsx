@@ -1,15 +1,18 @@
 import CartIcon from '/images/cart_icon.png'
-import { Link } from 'react-router-dom'
+import { useCartContext } from "../Context/CartContext";
+import { Link } from 'react-router-dom';
 
-function CartWidget({Cart}) {
-    return (
-        <div className="nav-item" id="seeCart">
-            <Link to="./pages/shopping-cart.html" className="nav-link"><img className="navbar-cart" 
+
+const CartWidget = () => {
+  const {totalProducts, cart} = useCartContext();
+  return (
+    <div className="container">
+      <Link to={'/cart'} className="nav-link"><img className="navbar-cart" 
                 src={CartIcon} alt="" />              
-            </Link>
-        </div>
-    )
-}
+        <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{totalProducts() ||cart}</span>
+      </Link>
+    </div>
+  );
+};
 
-
-export default CartWidget
+export default CartWidget;

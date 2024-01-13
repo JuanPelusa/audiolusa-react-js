@@ -19,8 +19,8 @@ import Series600 from '/images/Loudspeakers_600SeriesSBS_Desktop.jpg'
 
 const Home2 = () => {
   return (
-    <main>
-    <div className="b-divider"></div>
+    <>
+      <div className="b-divider"></div>
         <div className="container-fluid text-center" data-aos="fade-up" data-aos-duration="300" data-aos-easing="ease-in-out">
           <h4>- Brands we proudly sell -</h4>
           <div className="row">
@@ -59,7 +59,7 @@ const Home2 = () => {
             </div>
           </div>
         </div>
-    <div className="worksGallery" data-aos="fade-up">
+        <div className="worksGallery" data-aos="fade-up">
           <div className="itemGallery">
             <img src={Room2} className="imgGallery" alt="Music listening with a minimal touch" />
             <div>
@@ -97,7 +97,7 @@ const Home2 = () => {
             </div>
           </div>
         </div>
-        </main>
+    </>
   )
 }
 

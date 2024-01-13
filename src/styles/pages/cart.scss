@@ -1,0 +1,156 @@
+//* Shopping Cart *//
+
+.basket {
+    display: flex;
+	width: 100%;
+    justify-content: center;
+    @media screen and (max-width: $tablet) {
+		flex-direction: column;
+        margin-bottom: 610px;
+	}
+    @media screen and (max-width: $desktop) {
+		width: 100%;
+	}
+    h1 {
+        padding: 15px;
+        text-align: start;
+        border: 1px solid black;
+        border-radius: 10px; 
+        background-color: darkorange;
+    }
+}
+
+.cartContainer {
+    display: flex;
+    width: 100%;
+    gap: 1.5rem;
+    @media screen and (max-width: $tablet) {
+		flex-direction: column;
+	}
+    @media screen and (max-width: $desktop) {
+		width: 100%;
+	}
+}
+
+//* Main Products *//
+
+.emptyCart {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 80px 0px 80px 0px;
+}
+
+.goShop {
+    @extend %buttons;
+    text-decoration: none;
+    color: whitesmoke;
+    margin-top: 15px;
+    width: 100px;
+    height: 45px;
+    border: 1px solid grey;
+    background-color: forestgreen;
+}
+
+.cartProducts {
+    flex: 65%;
+    gap: 1rem;
+    @include mobile-index {
+        padding: 0;
+    }
+}
+
+.cartProduct {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(226, 226, 226);
+    color: var(--clr-main);
+    margin-bottom: 10px;
+    padding: .5rem;
+    padding-right: 3rem;
+    border-radius: 1rem;
+    img {
+        width: 12rem;
+        padding: 0;
+        margin-bottom: 0;
+    }
+}
+
+.eraseProduct {
+    height: 60px;
+    width: 20px;
+    border: 0;
+    background-color: transparent;
+    color: var(--clr-red);
+    cursor: pointer;
+    &:hover {
+        color: white;
+        transform: scaleY(1.08);
+    }
+    button {
+        border-radius: 0;
+        border: none;
+        background-color: none;
+    }
+
+}
+
+
+
+//* Total Price *//
+
+.right-basket {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex: 5%;
+	padding: 20px;
+    max-width: 30%;
+	height: 50%;
+    border: 1px solid #afafaf;
+	border-radius: 60px;
+	background: #bababa;
+	box-shadow: rgba(0, 0, 0, 0.311) 0px 5px 20px 0px;
+    @media screen and (max-width: $tablet) {
+		margin-bottom: 20px;
+	}
+    h3 {
+        margin-bottom: 30px;
+    }
+    p {
+
+        margin-bottom: 5px;
+        font-size: $small;
+    }
+    button {
+        width: 100px;
+        height: 60px;
+        margin-top: 40px;
+        font-size: $large;
+        border: none;
+        border-radius: 10px;
+        background-color: rgb(255, 120, 17);
+            &:hover {
+            transform: scaleY(1.07);
+        }
+    }
+}
+
+#removeCart {
+    background-color: seagreen;
+    font-size: 12px;
+    text-align: center;
+    margin-top: 10px;
+    height: 25px;
+    width: 40px;
+}
+.swal2-confirm, .swal2-cancel {
+    width: 40px;
+    margin: 8px;
+}

@@ -2,8 +2,8 @@ import { Container, Nav, Navbar } from 'react-bootstrap'
 import Fluff from '/images/fluff-std-logo-big-index.png'
 import LogoBrand from '/images/logo-brand-3d.png'
 import User from '/images/user-128.png'
-import CartWidget from'../CartWidget/CartWidget'
 import { Link } from 'react-router-dom'
+import CartWidget from '../CartWidget/CartWidget'
 
 function NavBar() {
   return (
@@ -51,7 +51,7 @@ function NavBar() {
                     <Link>                            
                       <input type="text" placeholder="Search" className="navbar-search" />
                     </Link>
-                  <Link to="/cart"> <CartWidget /> </Link>
+                  <CartWidget />
                 </div>
               </Nav>
             </Container>
