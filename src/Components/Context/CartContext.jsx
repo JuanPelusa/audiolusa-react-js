@@ -21,7 +21,7 @@ const CartProvider = ({ children }) => {
         
       };
       
-      
+      const clearCart = () => setCart([]);
     
       const Tax = () => {
         return cart.reduce((acc, product) => 
@@ -80,7 +80,7 @@ const CartProvider = ({ children }) => {
               onClick: function(){}
           }).showToast();
         }
-    
+
       return (
         <CartContext.Provider
           value={{
@@ -92,6 +92,7 @@ const CartProvider = ({ children }) => {
             totalPrice,
             totalProducts,
             cart,
+            clearCart
           }}
         >
           {children}

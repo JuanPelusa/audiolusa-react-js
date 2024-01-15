@@ -3,7 +3,7 @@
 
 # Audiolusa
 
-Site of eCommerce for audio enthusiasts and the general public.
+Site of eCommerce for audio enthusiasts and general public.
 Sale, advice and services of hi-fi and high end audio.
 personalized installations and home cinema design.
 The site provides simple and intuitive navigability. easy and descriptive specification of the products and simple way to carry out the purchase.

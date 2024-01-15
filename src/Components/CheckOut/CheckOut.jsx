@@ -21,7 +21,7 @@ export const CheckOut = () =>{
      
 
      if(!name || !lastname || !phone || !email ||!emailConfirmation ){
-      setError('Por favor complete todos los campos requeridos');
+      setError('Please complete all the fields');
       return;
      }
 
@@ -63,7 +63,6 @@ export const CheckOut = () =>{
        addDoc(collection(db, 'orders'), order)
        .then((docRef)=>{
         setOrderId(docRef.id);
-        removeProduct();
         clearCart()
        })
       .catch((error)=>{
@@ -121,16 +120,20 @@ export const CheckOut = () =>{
              <input className="input-check form-control" type="number" value={phone} onChange={(e) => setPhone(e.target.value)}
              />
           </div>
+
           <div className="mb-2 p-2">
            <label className="lab-check form-label">Email</label>
              <input className="input-check form-control" type="email" value={email} onChange={(e) => setEmail(e.target.value)}
              />
           </div>
+
           <div className="mb-2 p-2">
            <label className="lab-check form-label">Confirm email</label>
              <input className="input-check form-control" type="email" value={emailConfirmation} onChange={(e) => setEmailConfirmation(e.target.value)}
              />
           </div>
+
+
           {error && <p>{error}</p>}
           {orderId && (
             <p id="orderNumber">Thx for your purchase!🤩 Your order number is: <br/> {''} 🌟{orderId}🌟 {''} <br/></p>
