@@ -1,31 +1,58 @@
 import React from 'react'
-import { Carousel } from 'react-bootstrap'
-import Urban from '/images/cahiers-tendances-urban-is-natural_0.jpg'
-import Rock from '/images/cahiers-tendancesrock_0.jpg'
-import Organic from '/images/ct-music_in_organic.jpg'
-import Pop from '/images/ct-pop.jpg'
+import Focal from '/images/brand focal.gif'
+import Klipsch from '/images/klipsch.png'
+import Polk from '/images/polkaudio.png'
+import Bw from '/images/bw-logo-4017.png'
+import Yamaha from '/images/yamaha-logo.png'
+import Hifiman from '/images/hifiman.webp'
+import Dali from '/images/dali-red.png'
+import Mcintosh from '/images/mcintosh.webp'
+import Marantz from '/images/marantz-logo.gif'
+import Cambridge from '/images/logo cambridge audio.png'
+import Onkyo from '/images/onkyo.gif'
 
 const Home = () => {
   return (
     <div className="begin-site">
-      <Carousel id="carouselExampleAutoplaying" className="carousel slide" data-bs-ride="carousel" data-aos="fade-up" data-aos-duration="200" data-aos-easing="ease-in-out">
-        <Carousel.Item interval={2000}>
-          <img src={Urban} className="carousel-img d-block w-100" 
-            alt="Focal aria bookshelf magic natural sound for your music" />
-          </Carousel.Item>
-            <Carousel.Item interval={2000}>
-              <img src={Rock} className="carousel-img d-block w-100" 
-              alt="Studio motoring speakers for professional mastering and mixing" />
-            </Carousel.Item>
-          <Carousel.Item interval={2000}>
-            <img src={Organic} className="carousel-img d-block w-100" 
-            alt="Powerful and delightful sound with Focal Sopra floorstanding" />
-          </Carousel.Item>
-        <Carousel.Item interval={2000}>
-          <img src={Pop} className="carousel-img d-block w-100" 
-          alt="Color and magic of pop combined with this Stella utopia" />
-        </Carousel.Item>
-      </Carousel>        
+<div className="b-divider"></div>
+        <div className="container-fluid text-center" data-aos="fade-up" data-aos-duration="300" data-aos-easing="ease-in-out">
+          <h1>- Brands we proudly sell -</h1>
+          <div className="row">
+            <div className="col logo" data-aos="fade-up">
+              <img src={Focal} alt="Focal Logo" />
+            </div>
+            <div className="col logo" data-aos="fade-up">
+              <img src={Klipsch} alt="Klipsch logo" />
+            </div>
+            <div className="col logo" data-aos="fade-up">
+              <img src={Polk} alt="Polk logo" />
+            </div>
+            <div className="col logo" data-aos="fade-up">
+              <img src={Bw} alt="Bowers & Wilkins logo" />
+            </div>
+            <div className="col logo" data-aos="fade-up">
+              <img src={Yamaha} alt="Yamaha logo" />
+            </div>
+            <div className="col logo" data-aos="fade-up">
+              <img src={Hifiman} alt="Hifiman logo" />
+            </div>
+            <div className="col logo" data-aos="fade-up">
+              <img src={Dali} alt="Dali speakers logo" />
+            </div>
+            <div className="col logo" data-aos="fade-up">
+              <img src={Mcintosh} alt="Mcintosh logo" />
+            </div>
+            <div className="col logo" data-aos="fade-up">
+              <img src={Marantz} alt="Marantz logo" />
+            </div>
+            <div className="col logo" data-aos="fade-up">
+              <img src={Cambridge} alt="Cambridge audio logo" />
+            </div>
+            <div className="col logo" data-aos="fade-up">
+              <img src={Onkyo} alt="Onkyo logo" />
+            </div>
+          </div>
+        </div>       
     </div>
   )
 }

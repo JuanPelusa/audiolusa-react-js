@@ -1,6 +1,9 @@
 import {useState, useEffect} from 'react';
+import { Link } from 'react-router-dom';
+import { useCartContext } from '../Context/CartContext';
 
-const Counter = ({initial, stock, add}) => {
+const Counter = ({initial, stock, add, product}) => {
+   const { addToCart } = useCartContext();
    const [count, setCount] = useState(parseInt(initial));
    const decrease = () => {
 		setCount(count - 1);
@@ -22,9 +25,14 @@ const Counter = ({initial, stock, add}) => {
          <button disabled={count >= stock} onClick={increase} className='add-qty'>+</button>
          </div>
          <div>
-            <button disabled={stock <= 0} onClick={() => add(count)} id="add">
-               BUY NOW
+            <button disabled={stock <= 0} onClick={() => addToCart(product) + add(count)} id="addToCart">
+               Add to cart
             </button>
+            </div>
+            <div id="buy-now">
+            <Link to={'/cart'} disabled={stock <= 0} onClick={() => addToCart(product) + add(count)} className='buy-now'>
+               BUY NOW
+            </Link>
          </div>
       </>
    );

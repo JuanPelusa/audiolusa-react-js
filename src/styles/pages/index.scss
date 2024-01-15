@@ -1,35 +1,35 @@
 .hi {
     text-align: center;
     margin-top: 2rem;
-  } 
+} 
 
   //* Main start *//
 
 body {
-  @include tablet {
-      background-color: rgb(228, 228, 228);
-  }
-  @include tablet-max {
-      background-color: rgb(228, 228, 228);
-  }
-  @include mobile-index {
-      background-color: rgb(228, 228, 228);
-  }
+    @include tablet {
+        background-color: rgb(228, 228, 228);
+    }
+    @include tablet-max {
+        background-color: rgb(228, 228, 228);
+    }
+    @include mobile-index {
+        background-color: rgb(228, 228, 228);
+    }
 }
 #carouselExampleAutoplaying {
     margin-bottom: 20px;
-@include mobile-only {
-  max-width: 100%;
-  }
+    @include mobile-only {
+        max-width: 100%;
+    } 
 }
 .carousel-inner {
-  @include mobile-index {
-      overflow: hidden;
-      background-color: rgb(121, 121, 121);
-  }
-  @include tablet-max {
-      background-color: rgb(121, 121, 121);
-  }
+    @include mobile-index {
+        overflow: hidden;
+        background-color: rgb(121, 121, 121);
+    }
+    @include tablet-max {
+        background-color: rgb(121, 121, 121);
+    }
 }
 
   //* Main Center *//
@@ -41,226 +41,228 @@ body {
 }
 
 .col {
-  color: black;
-  font-size: $large;
-  font-style: normal;
-  font-weight: lighter;;
+    color: black;
+    font-size: $large;
+    font-style: normal;
+    font-weight: lighter;;
 }
 .left {
-  @include tablet-max {
-      padding-left: 0px;
-  }
+    @include tablet-max {
+        padding-left: 0px;
+    }
 }
 .right {
-  padding: 0px;
-  @include mobile-only {
-      padding: 0px 12px 0px 12px;
-  }
+    padding: 0px;
+    @include mobile-only {
+        padding: 0px 12px 0px 12px;
+    }
 }
 .left-img, .right-img {
-  border-radius: 7px;
+    border-radius: 7px;
 }
 .left-row {
-  margin-top: 5em;
-  @include tablet-max {
-      flex-direction: row;
-      margin: 2em 0em 0em 0em;
-  }
-  @include pre-tablet {
-      flex-direction: row;
-      margin: 2em 0em 0em 0em;
-  }
-  @include mobile-index {
-      flex-direction: column;
-      margin: 10px 0px 0px 0px;   
-  }
-}
-.right-row {
-  margin: -2em 0em 4em 0em;
-  @include tablet-portrait {
-      margin-top: 0.5em;
-  }
-  @include tablet-max {
-      flex-direction: row;
-      margin: 0em 0em 0em 0em;
-  }
-  @include pre-tablet {
-      flex-direction: row;
-      margin: 2em 0em 0em 0em;
-  }
-  @include mobile-index {
-      flex-direction: column-reverse;
-      margin: 10px 0px 0px 0px;
-  }
-}
-.dali, .klipsch {
-  width: 100%;
-}
-.left-content {
-  margin: 6em 0em 0em 17em;
-  height: $height - 190px;
-  width: $width - 300px;
-  text-align: start;
-  letter-spacing: 1px;
-  overflow: hidden;
-  h1 {
-      font-size: 1.7em;
-  }
-  @include tablet-portrait {
-      margin: 2em 0em 1em 2.5em;
-      height: 100%;
-  }
-  @include tablet-max {
-      width: 100%;
-      height: 100%;
-      margin: 1.5em 0em 0em 0em
-  }
-  @include tablet-lsPlus {
-      margin: 2em 0em 0em 9em;
-  }
-  @include mobile-index {
-      margin: 20px 0px 20px 0px;
-      width: 100%;
-      height: 100%;
-  }
-}
-.right-content {
-  margin: 9em 0em 0em 17em;
-  height: 280px;
-  width: 400px;
-  text-align: start;
-  letter-spacing: 1px;
-  overflow: hidden;
-  h2 {
-      font-size: 1.7em;
-  }
-  @include tablet-portrait {
-      margin: 3em 0em 0em 2.5em;
-  }
-  @include tablet-lsPlus {
-      margin: 5em 0em 0em 9em;
-  }
-  @include tablet-max {
-      margin: 1.5em 0em 0em 0em;
-      width: 100%;
-      height: 100%;
-  }
-  @include mobile-index {
-      margin: 20px 0px 20px 0px;
-      width: 100%;
-      height: 100%;
-  }
-}
-.title-index__left, .title-index__right {
-  overflow: hidden;
-}
-#text-1, #text-2 {
-      font-size: $large;
-      font-weight: 350;
-  @include tablet-portrait {
-      font-size: $medium;
-  }    
-  @include tablet-lsPlus {
-      font-size: $medium;
-  }
-  @include tablet-max {
-      font-size: $small;
-  }  
-  @include pre-tablet {
-      font-size: $small;
-  }  
-  @include mobile-index {
-      font-size: $small;
-  }
+    margin-top: 5em;
+    @include tablet-max {
+        flex-direction: row;
+        margin: 2em 0em 0em 0em;
+    }
+    @include pre-tablet {
+        flex-direction: row;
+        margin: 2em 0em 0em 0em;
+    }
+    @include mobile-index {
+        flex-direction: column;
+        margin: 10px 0px 0px 0px;   
+    }
+    }
+    .right-row {
+    margin: -2em 0em 4em 0em;
+    @include tablet-portrait {
+        margin-top: 0.5em;
+    }
+    @include tablet-max {
+        flex-direction: row;
+        margin: 0em 0em 0em 0em;
+    }
+    @include pre-tablet {
+        flex-direction: row;
+        margin: 2em 0em 0em 0em;
+    }
+    @include mobile-index {
+        flex-direction: column-reverse;
+        margin: 10px 0px 0px 0px;
+    }
+    }
+    .dali, .klipsch {
+    width: 100%;
+    }
+    .left-content {
+    margin: 6em 0em 0em 17em;
+    height: $height - 190px;
+    width: $width - 300px;
+    text-align: start;
+    letter-spacing: 1px;
+    overflow: hidden;
+    h1 {
+        font-size: 1.7em;
+    }
+    @include tablet-portrait {
+        margin: 2em 0em 1em 2.5em;
+        height: 100%;
+    }
+    @include tablet-max {
+        width: 100%;
+        height: 100%;
+        margin: 1.5em 0em 0em 0em
+    }
+    @include tablet-lsPlus {
+        margin: 2em 0em 0em 9em;
+    }
+    @include mobile-index {
+        margin: 20px 0px 20px 0px;
+        width: 100%;
+        height: 100%;
+    }
+    }
+    .right-content {
+    margin: 9em 0em 0em 17em;
+    height: 280px;
+    width: 400px;
+    text-align: start;
+    letter-spacing: 1px;
+    overflow: hidden;
+    h2 {
+        font-size: 1.7em;
+    }
+    @include tablet-portrait {
+        margin: 3em 0em 0em 2.5em;
+    }
+    @include tablet-lsPlus {
+        margin: 5em 0em 0em 9em;
+    }
+    @include tablet-max {
+        margin: 1.5em 0em 0em 0em;
+        width: 100%;
+        height: 100%;
+    }
+    @include mobile-index {
+        margin: 20px 0px 20px 0px;
+        width: 100%;
+        height: 100%;
+    }
+    }
+    .title-index__left, .title-index__right {
+    overflow: hidden;
+    }
+    #text-1, #text-2 {
+        font-size: $large;
+        font-weight: 350;
+    @include tablet-portrait {
+        font-size: $medium;
+    }    
+    @include tablet-lsPlus {
+        font-size: $medium;
+    }
+    @include tablet-max {
+        font-size: $small;
+    }  
+    @include pre-tablet {
+        font-size: $small;
+    }  
+    @include mobile-index {
+        font-size: $small;
+    }
 }
 
   //* Main Center *//
 
 .text-center {
-    margin-top: 20px;
+    margin-top: 40px;
+    h1 {
+        font-size: $xxlarge;
+    }
 }
 .logo{
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin: 20px 0px 60px 0px;
-      img {
-          background-color: white;
-          align-items: center;
-          height: 70px;
-          border-radius: 50%;
-      }
-  @include mobile-only {
-      justify-content: center;
-      align-items: center;
-      margin: 5px 0px 5px 0px;
-  img {
-      align-items: center;
-      height: 50px;
-      border-radius: 50%;
-      }
-  }
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0px 60px 0px;
+        img {
+            background-color: white;
+            align-items: center;
+            height: 70px;
+            border-radius: 50%;
+        }
+    @include mobile-only {
+        justify-content: center;
+        align-items: center;
+        margin: 5px 0px 5px 0px;
+    img {
+        align-items: center;
+        height: 50px;
+        border-radius: 50%;
+        }
+    }
 }  
 
 //* Main End *//
 
 .worksGallery {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-gap: 20px;
-  padding: 12px;
-  @include mobile {
-      display: flex;
-      flex-direction: column;
-  }
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 20px;
+    padding: 12px;
+    @include mobile {
+        display: flex;
+        flex-direction: column;
+    }
 }
-.itemGallery {
-  position: relative;
-  overflow: hidden;
-  z-index: 1000;
-  border-radius: 7px;   
-  &:nth-child(1) {
-      grid-column-start: span 5;
-  }
-  &:nth-child(2) {
-      grid-column-start: span 4;
-  }
-  &:nth-child(3) {
-      grid-column-start: span 3;
-  }
-  &:nth-child(4) {
-      grid-column-start: span 3;
-  }
-  &:nth-child(5) {
-      grid-column-start: span 5;
-  }
-  &:nth-child(6) {
-      grid-column-start: span 4;
-  }
-  &::after {
-      position: absolute;
-      left: 0;
-      top: 0;
-      transition: all 250ms ease-in-out;
-  }
-  img {
-      width: 100%;
-      height: 300px;
-      object-fit: cover;
-      border-radius: 7px;
-      transition: all 250ms ease-in-out;
-      &:hover {
-          position: relative;
-          transform: scale(1.1);
-          transition: all 250ms ease-in-out;
-      }
-  }
-  h3 {
-      position: absolute;
-      bottom: 15px;
-      right: 10px;
-      text-shadow: 2.5px 2px rgb(0, 0, 0);
-      color: white;
-  } 
-  
+    .itemGallery {
+    position: relative;
+    overflow: hidden;
+    z-index: 1000;
+    border-radius: 7px;   
+    &:nth-child(1) {
+        grid-column-start: span 5;
+    }
+    &:nth-child(2) {
+        grid-column-start: span 4;
+    }
+    &:nth-child(3) {
+        grid-column-start: span 3;
+    }
+    &:nth-child(4) {
+        grid-column-start: span 3;
+    }
+    &:nth-child(5) {
+        grid-column-start: span 5;
+    }
+    &:nth-child(6) {
+        grid-column-start: span 4;
+    }
+    &::after {
+        position: absolute;
+        left: 0;
+        top: 0;
+        transition: all 250ms ease-in-out;
+    }
+    img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 7px;
+        transition: all 250ms ease-in-out;
+        &:hover {
+            position: relative;
+            transform: scale(1.1);
+            transition: all 250ms ease-in-out;
+        }
+    }
+    h3 {
+        position: absolute;
+        bottom: 15px;
+        right: 10px;
+        text-shadow: 2.5px 2px rgb(0, 0, 0);
+        color: white;
+    } 
 }

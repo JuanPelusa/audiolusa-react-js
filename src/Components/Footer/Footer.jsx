@@ -26,7 +26,7 @@ function Footer() {
             <Link to="/pages/about-us.html">About Us</Link>
           </div>
         <div className="copy">
-          <p><img src={CopyIcon} alt="" width={30} />JP'S 2023</p>
+          <p>©️JP'S 2023</p>
         </div>
       </div>
     </footer>

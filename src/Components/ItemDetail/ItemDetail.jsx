@@ -29,7 +29,7 @@ const ItemDetail = ({ item }) => {
                 {item.quantity}
               </p>
             <p>Stock: {item.stock}</p>
-            {goToCart ? <Link to='/cart' className='addTo'>Go To Cart➡️</Link> :<Counter stock={item.stock} initial={0} add={add} />}
+            {goToCart ? <Link to='/cart' className='addTo'>Go To Cart➡️</Link> :<Counter stock={item.stock} initial={1} add={add} />}
             {goToCart && <Link to='/' className='addMore'>⬅️Continue Shopping</Link>}
         </div>
       </div>

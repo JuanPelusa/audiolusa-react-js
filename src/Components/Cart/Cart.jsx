@@ -18,25 +18,32 @@ const Cart = () => {
 
   return (
     <>
+    <div className='container shopCart'>
+    <h2>🔴 Cart 🔴</h2>
+    </div>
       {cart.map((product) => (
         <ItemCart key={product.id} product={product} />
       ))}
-      <div className="container basket">
-        <div className="right-basket">
-          <h3>- Checkout -</h3>
-          <h6>Subtotal: </h6>
-          <h6>{currencyType} {totalPrice()}</h6>
-          <br />
-          <p>*Tax: </p>
-          <p>{currencyType} {Tax()}</p>
-          <br />
-          <h5>Total: </h5>
-          <h5>{currencyType} {totalPrice() + Tax()}</h5>
       
+      <div className="container basket">
+      
+        <div className="right-basket">
+        <h2>- Checkout -</h2>
+        
+          <div>
+          <h6>Subtotal: </h6>
+          <h6>{currencyType} {totalPrice()}.-</h6>
+
+          <p>Tax: </p>
+
+          <p>{currencyType} {Tax()}.-</p>
+
+          <h5>Total: </h5>
+          <h5>{currencyType} {totalPrice() + Tax()}.-</h5>
+          </div>
           <Link to="/checkout">
-            <button id="buyBasket" className="buyButton">Finalizar Compra</button>
+            <button id="buyBasket" className="buyButton">Procced to checkout</button>
           </Link>
-    
           <Link to='/' className='addMore'>⬅️Continue Shopping</Link>
         </div>
       </div>

@@ -20,6 +20,7 @@ const ItemCart = ({ product }) => {
                   <p>QTY: {product.quantity}</p>
                   
                   <h6>*Subtotal: {currencyType} {product.quantity * product.price}.-</h6>
+                  <span>*price without tax</span>
                   </div>
 
                   <button onClick={() => removeProduct(product.id)} className="eraseProduct"><p><i aria-hidden="true" 

@@ -31,7 +31,7 @@ function NavBar() {
           </Navbar.Toggle>
           <Navbar.Collapse id="responsive-navbar-nav">
             <Container fluid>
-            <Nav className='nav-first'>
+            <Nav className='nav-first navResp'>
               <div className='brand'>
               <Link to="/" className="navbar-brand">
                 <img src={LogoBrand} 

@@ -1,0 +1,88 @@
+//* Form Contact *//
+
+.form-area {
+    display: flex;
+    justify-content: center;
+}
+#contact-block {
+    width: 70%;
+    border: 1px solid rgba(0, 0, 0, 0.655);
+    border-radius: 10px;
+}
+#contact-block, .contact-form {
+    h3 {
+        width: 100%;
+        text-align: center;
+        color: white;
+        margin-top: 7px;
+    }
+}
+.productsResume{
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0px 20px 0px;
+    background-color: #029200;
+    border-radius: 15px;
+    p  {
+        align-items: center;
+        margin: 5px;
+        text-align: center;
+        color: white;
+    }
+}
+.single-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #6a6a6a;
+}
+
+.form-control {
+	border: 1px solid #000000;
+}
+.form-text {
+    font-size: $small ;
+    @include mobile-index {
+        font-size: $small;
+    }
+}
+.form-label {
+    display: flex;
+    justify-content: center;
+
+    color: #fff;
+}
+
+.form-confirm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    button {
+        @extend %buttons;
+        justify-content: center;
+        align-items: center;
+        height: 30px;
+        border: 1px solid #5f9ea0;
+        color: #fff;
+        background-color: cornflowerblue;
+        margin: 0px 0px 10px 7px;
+        cursor: pointer;
+        &:hover{
+            background-color: #252525;
+            transform: translateY(5px);
+            transition: all 0.3s ease-in-out;
+        }
+        @include desktop {
+            margin-bottom: 10px;
+        }
+    }
+}
+
+#orderNumber {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    text-align: center; 
+}

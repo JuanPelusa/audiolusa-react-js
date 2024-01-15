@@ -87,7 +87,6 @@
         justify-content: center;
         margin-bottom: 5px;
         width: 80px;
-        border: 1px solid #5f9ea0;
         text-align: center;
         text-indent: 0px;
     }
@@ -101,23 +100,12 @@
         font-size: $small;
     }
 }   
-#seeCart {
-    display: flex;
-    align-items: center;
-    color: black;
-    img {
-        width: 2rem;
-    }
-    span {
-        text-decoration: none;
-    }
-}
 
 //* Navbar Collapse *//
 
-.navbar-collapse {
-    flex-basis: 100%;
-    flex-grow: 1;
+.navResp {
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
 .navbar-toggler {

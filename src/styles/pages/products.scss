@@ -184,7 +184,7 @@
     @extend %buttons;
     text-decoration: none;
     color: whitesmoke;
-    margin-top: 10px;
+    margin-top: 15px;
     margin-bottom: 10px;
     width: 120px;
     height: 47px;
@@ -194,16 +194,27 @@
 .addTo {
     @extend %buttons;
     text-decoration: none;
+    margin-top: 15px;
+    margin-bottom: 10px;
     width: 120px;
     height: 23px;
     color: whitesmoke;
     border: 1px solid grey;
     background-color: #ff0000;
 }
-#add {
+#addToCart {
     @extend %buttons;
+    border: 1px solid grey;
+    background-color: #ffdd00;
+    
+}
+#buy-now {
+    text-decoration: none;
+    @extend %buttons;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 10px;
-    margin-bottom: 5px;
     border: 1px solid grey;
     background-color: #ff8c00;
     transition: all 200ms ease-in-out;
@@ -215,6 +226,11 @@
         transform: translateY(-3px);
         transition: all 0.3s ease-in-out;
     }
+    
+}
+.buy-now {
+    text-decoration: none;
+    color: black;
 }
 .error {
     display: flex;

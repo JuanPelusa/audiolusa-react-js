@@ -2,6 +2,8 @@ import { useState } from "react"
 import { useCartContext } from "../Context/CartContext"
 import {getFirestore, collection, addDoc, updateDoc, doc, getDoc} from 'firebase/firestore';
 
+const currencyType = "usd";
+
 export const CheckOut = () =>{
       const [name, setName] = useState('');
       const [lastname, setLastname] = useState('');
@@ -12,7 +14,7 @@ export const CheckOut = () =>{
       const [orderId, setOrderId] = useState('');
       const [message, setMessage] = useState('');
 
-     const { cart, totalPrice, removeProduct, clearCart} = useCartContext();
+     const { cart, totalPrice, removeProduct, clearCart, Tax} = useCartContext();
 
      const formManager = (event) =>{
       event.preventDefault();
@@ -83,63 +85,58 @@ export const CheckOut = () =>{
     
 };
   return(
-
           <div className="form-area">
               <div className="container form-area">
                 <div id="contact-block" className="row single-form g-0" data-aos="zoom-in-up">
-
                   <div className="col-sm-12 col-lg-6">
                     <div className="contact-form">
                       <div>
                         <h3>Complete to confirm purchase</h3>
                       </div>
                       <div className="form-items">
-           <form onSubmit={formManager}>
-           
-            {cart.map((product)=>(
-              <div key={product.id}>
-                <p>{''} {product.name} {product.quantity}</p>
-                <p>{product.price}</p>
-              </div>
-            ))}
-
+                        <form onSubmit={formManager}>
+                          {cart.map((product)=>(
+                            <div key={product.id} className="productsResume">
+                              <p>{''} {product.name}</p>
+                              <p>Qty: {product.quantity}</p>
+                              <p>{currencyType} {product.price + Tax()}.-</p>
+                            </div>
+                          )
+                          )}
+                          
           <div className="form-text mb-2 p-2">
-           <label className="lab-check form-label">Nombre:</label>
+           <label className="lab-check form-label">Name</label>
              <input className="input-check form-control sign" type="text" value={name} onChange={(e) => setName(e.target.value)}
              />
           </div>
 
           <div className="mb-2 p-2">
-           <label className="lab-check form-label">Apellido:</label>
+           <label className="lab-check form-label">Lastname</label>
              <input className="input-check form-control" type="text" value={lastname} onChange={(e) => setLastname(e.target.value)}
              />
           </div>
 
           <div className="mb-2 p-2">
-           <label className="lab-check form-label">Telefono:</label>
+           <label className="lab-check form-label">Phone number</label>
              <input className="input-check form-control" type="number" value={phone} onChange={(e) => setPhone(e.target.value)}
              />
           </div>
-
           <div className="mb-2 p-2">
-           <label className="lab-check form-label">Email:</label>
+           <label className="lab-check form-label">Email</label>
              <input className="input-check form-control" type="email" value={email} onChange={(e) => setEmail(e.target.value)}
              />
           </div>
-
           <div className="mb-2 p-2">
-           <label className="lab-check form-label">Confirmar email</label>
+           <label className="lab-check form-label">Confirm email</label>
              <input className="input-check form-control" type="email" value={emailConfirmation} onChange={(e) => setEmailConfirmation(e.target.value)}
              />
           </div>
-
-
           {error && <p>{error}</p>}
           {orderId && (
-            <p> ¡Gracias por tu compra ! Tu numero de seguimiento es: <br/> {''} {orderId} {''} <br/></p>
+            <p id="orderNumber">Thx for your purchase!🤩 Your order number is: <br/> {''} 🌟{orderId}🌟 {''} <br/></p>
           )}
-           <div className="form-items">
-            <button type="submit" className="button"> Enviar </button>
+           <div className="form-confirm">
+            <button type="submit" className="button">Confirm</button>
            </div>
           </form>
           </div>

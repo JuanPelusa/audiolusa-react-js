@@ -18,7 +18,10 @@ const CartProvider = ({ children }) => {
         } else {
           setCart([...cart, { ...item, quantity }]);
         }
+        
       };
+      
+      
     
       const Tax = () => {
         return cart.reduce((acc, product) => 
@@ -31,23 +34,58 @@ const CartProvider = ({ children }) => {
     
       const totalProducts = () =>
         cart.reduce(
-          (acumulador, productoActual) => acumulador + productoActual.quantity,
+          (acc, actualProduct) => acc + actualProduct.quantity,
           0
         );
     
-      const clearCart = () => setCart([]);
-    
       const isInCart = (id) =>
         cart.find((product) => product.id === id) ? true : false;
-    
-      const removeProduct = (id) =>
-        setCart(cart.filter((product) => product.id !== id));
+
+        const addToCart = (id) => {
+          setCart(cart.filter((product) => product.id !== id));
+          Toastify({
+              text: "Product added",
+              duration: 2000,
+              close: true,
+              gravity: "top", 
+              position: "center", 
+              stopOnFocus: true, 
+              style: {
+                  color: "#000000",
+                  background: "linear-gradient(to right, #ff8c00, #fbc056)",
+                  borderRadius: "1rem",
+                  textTransform: "uppercase",
+                  fontSize: ".75rem"
+              },
+              onClick: function(){}  
+            }).showToast();
+          }
+
+      const removeProduct = (id) => {
+        setCart(cart.filter((product) => product.id !== id)); 
+          Toastify({
+              text: "Product removed",
+              duration: 2000,
+              close: true,
+              gravity: "top", 
+              position: "center",
+              stopOnFocus: true,
+              style: {
+                  color: "#000000",
+                  background: "linear-gradient(to right, #ff0000, #ff3636)",
+                  borderRadius: "1rem",
+                  textTransform: "uppercase",
+                  fontSize: ".75rem"
+              },
+              onClick: function(){}
+          }).showToast();
+        }
     
       return (
         <CartContext.Provider
           value={{
-            clearCart,
             isInCart,
+            addToCart,
             removeProduct,
             addProduct,
             Tax,
