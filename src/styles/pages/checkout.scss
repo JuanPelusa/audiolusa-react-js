@@ -3,6 +3,7 @@
 .form-area {
     display: flex;
     justify-content: center;
+    position: relative
 }
 #contact-block {
     width: 70%;
@@ -79,10 +80,12 @@
 }
 
 #orderNumber {
-    color: white;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 10px;
-    text-align: center; 
+    text-align: center;
+    background-color: #6a6a6a;
+    color: white; 
 }

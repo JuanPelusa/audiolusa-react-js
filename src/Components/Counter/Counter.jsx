@@ -23,22 +23,22 @@ const Counter = ({initial, stock, add, product}) => {
          <button disabled={count <= 0} onClick={decrease} className='remove-qty'>-</button>
             <h5>{count}</h5>
          <button disabled={count >= stock} onClick={increase} className='add-qty'>+</button>
-         </div>
+      </div>
          <div>
             <button disabled={stock <= 0} onClick={() => addToCart(product) + add(count)} id="addToCart">
                Add to cart
             </button>
-            </div>
-            <div id="buy-now">
+         </div>
+         <div id="buy-now">
             {stock > 0 ? (
-            <Link to={'/cart'} onClick={() => addToCart(product) + add(count)} className='buy-now'>
-               BUY NOW
-            </Link>
-             ) : (
+               <Link to={'/cart'} onClick={() => addToCart(product) + add(count)} className='buy-now'>
+                  BUY NOW
+               </Link>
+               ) : (
                <span disabled={stock <= 0} className='disabled-buy-now'>
-                 Out of stock
+                  Out of stock
                </span>
-             )}
+            )}
          </div>
       </>
    );
