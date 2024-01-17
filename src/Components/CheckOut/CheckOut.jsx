@@ -22,7 +22,7 @@ export const CheckOut = () =>{
         setError('Please complete all the fields');
       return;
     }
-     if( email !== emailConfirmation){
+      if( email !== emailConfirmation){
       setError('emails not match');
       return;
     }

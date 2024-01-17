@@ -11,16 +11,17 @@ const ItemListContainer = () => {
     useEffect(()=>{
         const queryDb = getFirestore();
         const queryCollection = collection(queryDb, 'audiolusa products');
-     
+
         if(id){
-         const queryFilter = query(queryCollection, where('categoryId', '==', id));
-         getDocs(queryFilter).then((res)=>
-         setItem(res.docs.map((p)=> ({id: p.id, ...p.data() })))
-         );
-        } else{
-         getDocs(queryCollection).then((res)=>
-         setItem(res.docs.map((p)=> ({id: p.id, ...p.data() })))
-         );
+            const queryFilter = query(queryCollection, where('categoryId', '==', id));
+                getDocs(queryFilter).then((res)=>
+                setItem(res.docs.map((p)=> ({id: p.id, ...p.data() })))
+            );
+        } 
+            else{
+                getDocs(queryCollection).then((res)=>
+                setItem(res.docs.map((p)=> ({id: p.id, ...p.data() })))
+            );
         }
        }, [id])
 

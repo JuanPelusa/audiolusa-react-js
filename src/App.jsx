@@ -23,10 +23,10 @@ function App() {
             <Home />
               <Routes>
                 <Route path={'/'} element={ <ItemListContainer /> } />
-                <Route path={'/category/:id'} element={ <ItemListContainer /> } />
-                <Route path={'/item/:id'} element={ <ItemDetailContainer /> } />
-                <Route path={'/cart'} element={ <Cart /> } />
-                <Route path={'/checkout'} element={<CheckOut />} />
+                  <Route path={'/category/:id'} element={ <ItemListContainer /> } />
+                    <Route path={'/item/:id'} element={ <ItemDetailContainer /> } />
+                    <Route path={'/cart'} element={ <Cart /> } />
+                  <Route path={'/checkout'} element={<CheckOut />} />
                 <Route path={'*'} element={ <Error /> } />
               </Routes>
             <Home2 />

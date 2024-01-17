@@ -11,9 +11,8 @@ const ItemDetailContainer = () => {
     useEffect(()=>{
         const queryDb = getFirestore();
         const queryDoc = doc(queryDb, 'audiolusa products', id);
-        getDoc(queryDoc).then((res)=>
-        setItem({id: res.id, ...res.data()}))
-            
+            getDoc(queryDoc).then((res)=>
+            setItem({id: res.id, ...res.data()}))
         }, [id])
 
     return (
