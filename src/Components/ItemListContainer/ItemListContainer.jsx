@@ -23,16 +23,16 @@ const ItemListContainer = () => {
                 setItem(res.docs.map((p)=> ({id: p.id, ...p.data() })))
             );
         }
-       }, [id])
+    }, [id])
 
     return (
-        <main>
+        <>
             <div id="cards-container__products" className="container-products" data-aos="fade-up" data-aos-duration="200" data-aos-easing="ease-in-out">
-                <div id="productTitle" className="container-fluid">
+                <div id="productTitle" className="container">
                     <ItemList item={item} />
                 </div>
             </div>
-        </main>
+        </>
     )
 }
 

@@ -52,11 +52,15 @@ These are some of the resources used:
 
 -https://getbootstrap.com/docs/5.3/getting-started/introduction/
 
+-https://react-bootstrap.netlify.app/docs/getting-started/introduction
+
 -https://sweetalert2.github.io/
 
 -https://www.npmjs.com/package/toastify-js
 
 -https://michalsnik.github.io/aos/
+
+-https://www.npmjs.com/package/react-firebase-hooks
 
 # Learn more
 

@@ -4,18 +4,22 @@ import LogoBrand from '/images/logo-brand-3d.png'
 import User from '/images/user-128.png'
 import { Link } from 'react-router-dom'
 import CartWidget from '../CartWidget/CartWidget'
+import Sign from '../Sign/Sing'
 
 function NavBar() {
+  const handleSearch = (query) => {
+    // Implement your search logic here using the query
+    console.log('Searching for:', query);
+    // You might want to perform an API request or other actions based on the search query
+  };
   return (
     <header>
       <Nav>
           <Container fluid className='top-header'>
-            <Link to="/pages/contact.html" className='nav-link'>Contact</Link>
-              <Link to="/pages/about-us.html" className='nav-link'>About Us</Link>
-              <Link to="pages/services.html" className='nav-link'>Services</Link>
-            <Link to="#!" className="nav-link navbar-user" 
-            alt="login" data-bs-toggle="modal" 
-            data-bs-target="#exampleModal">Sign</Link>
+            <Link to="contact" className='nav-link'>Contact</Link>
+              <Link to="about" className='nav-link'>About Us</Link>
+              <Link to="services" className='nav-link'>Services</Link>
+              <Sign />
           </Container>
       </Nav>
       <Navbar collapseOnSelect expand="xl" className="bg-body-tertiary">
@@ -43,14 +47,12 @@ function NavBar() {
                       <Link to="/category/speakers" className="nav-link hdr">Speakers</Link>
                         <Link to="/category/headphones" className="nav-link hdr">Headphones</Link>
                           <Link to="/category/wireless" className="nav-link hdr">Wireless</Link>
-                        <Link className="nav-link hdr d-flex d-xl-none" to="/services">Services</Link>                                
-                      <Link to="#!" className="nav-link hdr d-flex d-xl-none">
+                        <Link to="/services" className="nav-link hdr d-flex d-xl-none">Services</Link>                                
+                      <Link to="/sign" className="nav-link hdr d-flex d-xl-none">
                         <img src={User} 
-                        alt="login"  className="navbar-user" data-bs-toggle="modal" data-bs-target="#exampleModal" width={35}/>
+                        alt="login"  className="navbar-user"  width={35}/>
                       </Link>
-                    <Link>                            
-                      <input type="text" placeholder="Search" className="navbar-search" />
-                    </Link>
+                    
                   <CartWidget />
                 </div>
               </Nav>
