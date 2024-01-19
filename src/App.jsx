@@ -13,12 +13,9 @@ import AboutUs from './Components/AboutUs/AboutUs'
 import Contact from './Components/Contact/Contact'
 import Parent from './Components/Parent/Parent'
 import ParentList from './Components/ParentList/ParentList'
-
-
-
+import Sign from './Components/Sign/Sing'
 
 function App() {
-  const [count, setCount] = useState(0)
   return (
     <>
       <BrowserRouter>
@@ -28,13 +25,12 @@ function App() {
                 <Route path={'/'} element={ <Parent /> } />
                   <Route path={'/category/:id'} element={ <ParentList /> } />
                     <Route path={'/item/:id'} element={ <ItemDetailContainer /> } />
+                    <Route path={'/services'} element={<Services />} /> 
+                      <Route path={'/about'} element={<AboutUs />} />
+                        <Route path={'/contact'} element={<Contact />} />
+                      <Route path={'/sign'} element={<Sign />} />
                     <Route path={'/cart'} element={ <Cart /> } />
-                    <Route path={'/checkout'} element={<CheckOut />} />
-                  <Route path={'/services'} element={<Services />} /> 
-                  <Route path={'/about'} element={<AboutUs />} />
-                  <Route path={'/contact'} element={<Contact />} />
-
-
+                  <Route path={'/checkout'} element={<CheckOut />} />                 
                 <Route path={'*'} element={ <Error /> } />
               </Routes>
           <Footer />

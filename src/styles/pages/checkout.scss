@@ -3,21 +3,24 @@
 .form-area {
     display: flex;
     justify-content: center;
-    position: relative
+    margin: 20px 0px 202px 0px;
 }
 #contact-block {
-    width: 70%;
+    display: flex;
+    width: 50%;
     border: 1px solid rgba(0, 0, 0, 0.655);
     border-radius: 10px;
-}
-#contact-block, .contact-form {
-    h3 {
+    h3{
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 100%;
         text-align: center;
         color: white;
-        margin-top: 7px;
+
     }
 }
+
 .productsResume{
     display: flex;
     justify-content: space-between;
@@ -89,3 +92,4 @@
     background-color: #6a6a6a;
     color: white; 
 }
+

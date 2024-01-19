@@ -5,13 +5,10 @@ import User from '/images/user-128.png'
 import { Link } from 'react-router-dom'
 import CartWidget from '../CartWidget/CartWidget'
 import Sign from '../Sign/Sing'
+import AuthDetails from '../SingDetails/SignDetails'
+
 
 function NavBar() {
-  const handleSearch = (query) => {
-    // Implement your search logic here using the query
-    console.log('Searching for:', query);
-    // You might want to perform an API request or other actions based on the search query
-  };
   return (
     <header>
       <Nav>
@@ -20,6 +17,9 @@ function NavBar() {
               <Link to="about" className='nav-link'>About Us</Link>
               <Link to="services" className='nav-link'>Services</Link>
               <Sign />
+          </Container>
+          <Container fluid className='topHeaderUser'>
+            <AuthDetails />
           </Container>
       </Nav>
       <Navbar collapseOnSelect expand="xl" className="bg-body-tertiary">
@@ -52,7 +52,6 @@ function NavBar() {
                         <img src={User} 
                         alt="login"  className="navbar-user"  width={35}/>
                       </Link>
-                    
                   <CartWidget />
                 </div>
               </Nav>

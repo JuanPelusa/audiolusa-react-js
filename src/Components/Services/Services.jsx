@@ -1,10 +1,10 @@
-import React from "react"
+import React from "react";
 
-function Services () {
+const Services = () => {
 
-return (
+  return (
     <>
-    <div className="container-fluid">
+      <div className="container-fluid">
         <div className="row services">
           <div className="col main-contents">
             <span>-</span>
@@ -14,17 +14,17 @@ return (
         </div> 
       </div>
     <div className="container">
-        <div className="row service-one">
-          <div className="col upper-container">
-            <img src="../images/mcintosh.png" alt="service example" / >
-          </div>
-          <div className="col services-text__container">
-            <p><i>A</i>t Audiolusa we have a team of specialized advisors for every need.
-              <br /><i>W</i>e know about the pleasure of listening to music or enjoying those crucial moments in our favorite film content.
-              <br /><i>C</i>ome visit us and discover everything we have to offer.
-            </p>
-          </div>
+      <div className="row service-one">
+        <div className="col upper-container">
+          <img src="../images/mcintosh.png" alt="service example" / >
         </div>
+        <div className="col services-text__container">
+          <p><i>A</i>t Audiolusa we have a team of specialized advisors for every need.
+            <br /><i>W</i>e know about the pleasure of listening to music or enjoying those crucial moments in our favorite film content.
+            <br /><i>C</i>ome visit us and discover everything we have to offer.
+          </p>
+        </div>
+      </div>
         <div className="row service-two">
           <div className="col bottom-container">
             <iframe width="630" height="544" src="https://www.youtube.com/embed/pNtY6BZOk7M" 
@@ -41,8 +41,8 @@ return (
           </div>
         </div>
       </div>
-      </>
-      ) 
-    }
+    </>
+  ) 
+}
 
 export default Services

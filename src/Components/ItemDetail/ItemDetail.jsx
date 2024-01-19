@@ -7,13 +7,13 @@ const currencyType = "usd";
 
 const ItemDetail = ({ item }) => {
 
-  const[goToCart, setGoToCart] = useState(false);
+  const[toCart, setToCart] = useState(false);
   const {addProduct} = useCartContext()
   const navigate = useNavigate();
   
   const add = (quantity) =>{
-   setGoToCart(true);
-   addProduct(item, quantity);
+    setToCart(true);
+    addProduct(item, quantity);
   }
 
   const goBack = () => {
@@ -36,8 +36,8 @@ const ItemDetail = ({ item }) => {
                 {item.quantity}
               </p>
             <p>Stock: {item.stock}</p>
-          {goToCart ? <Link to='/cart' className='addTo'>Go To Cart➡️</Link> :<Counter stock={item.stock} initial={1} add={add} />}
-          {goToCart && <Link to='/' className='addMore'>⬅️Continue Shopping</Link>}
+          {toCart ? <Link to='/cart' className='addTo'>Go To Cart➡️</Link> :<Counter stock={item.stock} initial={1} add={add} />}
+          {toCart && <Link to='/' className='addMore'>⬅️Continue Shopping</Link>}
         </div>
         <div className='backButtonsContain'>  
           <Link type="button" onClick={goBack} className='backButtons bk-first'>Go Back</Link>

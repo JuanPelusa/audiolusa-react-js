@@ -4,7 +4,6 @@ import X from '/images/x-social-media-black-icon.png'
 import Insta from  '/images/black_instagram_icon.png'
 import YouTube from '/images/black_youtube_icon.png'
 import FluffBig from '/images/fluff-std-logo-big.png'
-import CopyIcon from '/images/icons8-copyright-48.png'
 
 function Footer() {
   return (

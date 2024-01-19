@@ -23,7 +23,6 @@ function Sign() {
       console.log(error);
     })
   }
-  
   const signUp = (e) => {
     e.preventDefault();
     createUserWithEmailAndPassword(auth, email, password)
@@ -40,7 +39,6 @@ function Sign() {
       <Link variant="primary" onClick={handleShow} style={{textDecoration: 'none', color: 'black', fontWeight: 'normal'}}>
         Sign
       </Link>
-
       <Modal
         show={show}
         onHide={handleClose}
@@ -50,39 +48,39 @@ function Sign() {
         <Modal.Header closeButton>
           <Modal.Title><h1 className="fs-2">Login</h1></Modal.Title>
         </Modal.Header>
-        <Modal.Body>
-        <form onSubmit={signIn}>
-                              <div className="form-outline mb-3">
-                                <input type="email" id="signInput" className="form-control" placeholder="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-                                <label className="sign-label bk-first">Email address</label>
-                              </div>
-                                <div className="form-outline mb-3">
-                                  <input type="password" className="form-control" placeholder="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-                                  <label className="sign-label bk-first">Password</label>
-                                </div>
-                              <button type="submit" className="btn btn-primary btn-block mb-4 signInBtn">Sign in</button>
-                              </form>
-                              <div className="sign hr-lines">
-                                <h4 className="fs-6">Or</h4>
-                              </div>
-                              <div className="register">
-                                <h2 className="register-title fs-2">Register</h2>
-                              </div>
-                          <form onSubmit={signUp}>
-                              <div className="form-outline mb-3">
-                                <input type="text" className="form-control" placeholder="name"  />
-                                <label className="sign-label bk-first">Full name</label>
-                              </div>
-                              <div className="form-outline mb-3">
-                                <input type="email" className="form-control" placeholder="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-                                <label className="sign-label bk-first">Enter your email</label>
-                              </div>
-                              <div className="form-outline mb-3">
-                                <input type="password" className="form-control" placeholder="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-                                <label className="sign-label bk-first">password</label>
-                              </div>
-                              <button type="submit" className="btn btn-primary btn-block mb-4 signInBtn">Sign up</button>
-                            </form>
+          <Modal.Body>
+            <form onSubmit={signIn}>
+              <div className="form-outline mb-3">
+                <input type="email" id="signInput" className="form-control email" placeholder="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                <label className="sign-label bk-first">Email address</label>
+              </div>
+                <div className="form-outline mb-3">
+                  <input type="password" className="form-control pass" placeholder="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                  <label className="sign-label bk-first">Password</label>
+                </div>
+              <button type="submit" className="btn btn-primary btn-block mb-4 signInBtn" onClick={handleClose}>Sign in</button>
+            </form>
+              <div className="sign hr-lines">
+                <h4 className="fs-6">Or</h4>
+              </div>
+            <div className="register">
+              <h2 className="register-title fs-2">Register</h2>
+            </div>
+          <form onSubmit={signUp}>
+            <div className="form-outline mb-3">
+              <input type="text" className="form-control full" placeholder="name"  />
+              <label className="sign-label bk-first">Full name</label>
+            </div>
+              <div className="form-outline mb-3">
+                <input type="email" className="form-control emailR" placeholder="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                <label className="sign-label bk-first">Enter your email</label>
+              </div>
+              <div className="form-outline mb-3">
+                <input type="password" className="form-control passR" placeholder="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                <label className="sign-label bk-first">password</label>
+              </div>
+            <button type="submit" className="btn btn-primary btn-block mb-4 signInBtn" onClick={handleClose}>Sign up</button>
+          </form>
         </Modal.Body>
       </Modal>
     </>
