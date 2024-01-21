@@ -1,11 +1,12 @@
 import { Container, Nav, Navbar } from 'react-bootstrap'
 import Fluff from '/images/fluff-std-logo-big-index.png'
 import LogoBrand from '/images/logo-brand-3d.png'
-import User from '/images/user-128.png'
 import { Link } from 'react-router-dom'
 import CartWidget from '../CartWidget/CartWidget'
 import Sign from '../Sign/Sing'
 import AuthDetails from '../SingDetails/SignDetails'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function NavBar() {
@@ -13,16 +14,17 @@ function NavBar() {
     <header>
       <Nav>
           <Container fluid className='top-header'>
-            <Link to="contact" className='nav-link'>Contact</Link>
-              <Link to="about" className='nav-link'>About Us</Link>
-              <Link to="services" className='nav-link'>Services</Link>
+            <Link to="/contact" className='nav-link'>Contact</Link>
+              <Link to="/about" className='nav-link'>About Us</Link>
+              <Link to="/services" className='nav-link'>Services</Link>
               <Sign />
           </Container>
           <Container fluid className='topHeaderUser'>
             <AuthDetails />
           </Container>
+          <ToastContainer />
       </Nav>
-      <Navbar collapseOnSelect expand="xl" className="bg-body-tertiary">
+      <Navbar collapseOnSelect expand="xl" className="bg-body-tertiary" id='navbar'>
         <Container fluid className='header-one'>
           <Link to="/"><img src={Fluff} alt="Fluff image Audiolusa" className="logo-nav d-flex d-xl-none" /></Link>
           <Navbar.Toggle aria-controls="responsive-navbar-nav">
@@ -48,16 +50,16 @@ function NavBar() {
                         <Link to="/category/headphones" className="nav-link hdr">Headphones</Link>
                           <Link to="/category/wireless" className="nav-link hdr">Wireless</Link>
                         <Link to="/services" className="nav-link hdr d-flex d-xl-none">Services</Link>                                
-                      <Link to="/sign" className="nav-link hdr d-flex d-xl-none">
-                        <img src={User} 
-                        alt="login"  className="navbar-user"  width={35}/>
-                      </Link>
+                      <div className="nav-link hdr d-flex d-xl-none">
+                      <Sign  />
+                      </div>
                   <CartWidget />
                 </div>
               </Nav>
             </Container>
           </Navbar.Collapse>
         </Container>
+        <ToastContainer />
       </Navbar>
     </header>
   );

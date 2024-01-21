@@ -10,7 +10,6 @@ export const CheckOut = () =>{
   const [lastname, setLastname] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
-  const [emailConfirmation, setEmailConfirmation] = useState('');
   const [error, setError] = useState('');
   const [orderId, setOrderId] = useState('');
   const [message, setMessage] = useState('');
@@ -19,12 +18,8 @@ export const CheckOut = () =>{
 
   const formManager = (event) =>{
     event.preventDefault();
-      if(!name || !lastname || !phone || !email ||!emailConfirmation ){
+      if(!name || !lastname || !phone || !email){
         setError('Please complete all the fields');
-      return;
-    }
-      if( email !== emailConfirmation){
-      setError('emails not match');
       return;
     }
 
@@ -63,10 +58,11 @@ export const CheckOut = () =>{
           icon: "success",
           title: "Thank you for your purchase!🤩",
           text: `🌟Your order number is: ${docRef.id}🌟`,
-          confirmButtonText: "Exit",
-          customClass: 'swal-custom-size',
-          position: 'top',
-        });
+          showConfirmButton: false,
+          position: 'center',
+        }).then(function() {
+          window.location = "http://localhost:5173/";
+      });
       })
       .catch((error)=>{
         console.log('Order could not be created', error);
@@ -82,7 +78,6 @@ export const CheckOut = () =>{
   setLastname('');
   setPhone('');
   setEmail('');
-  setEmailConfirmation('');
   setMessage('');
 }; 
 
@@ -96,13 +91,20 @@ export const CheckOut = () =>{
               <div className="form-items">
                 <form onSubmit={formManager}>
                   {cart.map((product)=>(
+                    <div>
                     <div key={product.id} className="productsResume">
                       <p>{''} {product.name}</p>
                         <p>Qty: {product.quantity}</p>
                       <p>{currencyType} {product.price + Tax()}.-</p>
                     </div>
+                    </div>
                     )
+
                   )}
+                  <div className="productsResume" style={{display: "flex"}}>
+                      <p>Total: </p>
+                      <p>{currencyType} {totalPrice() + Tax()}</p>
+                    </div>
                   <div className="p-2">
                     <label className="lab-check form-label">Name</label>
                     <input className="input-check form-control sign" type="text" value={name} onChange={(e) => setName(e.target.value)}
@@ -120,6 +122,7 @@ export const CheckOut = () =>{
                           <label className="lab-check form-label">Email</label>
                           <input className="input-check form-control" type="email" value={email} onChange={(e) => setEmail(e.target.value)}/>
                         </div>
+                        
                     {error && <p>{error}</p>}
                   <div className="form-confirm mb-2">
                     <button type="submit" className="button">Confirm</button>

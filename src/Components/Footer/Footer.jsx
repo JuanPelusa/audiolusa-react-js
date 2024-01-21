@@ -20,9 +20,9 @@ function Footer() {
         <img src={FluffBig} alt="logo" width={60} />
         </div>
           <div className="center-foot d-flex d-xl-none">
-            <Link to="/pages/contact.html">Contact</Link>
+            <Link to="/contact" className='footLink'>Contact</Link>
               <span>-</span>
-            <Link to="/pages/about-us.html">About Us</Link>
+            <Link to="/about" className='footLink'>About Us</Link>
           </div>
         <div className="copy">
           <p>©️JP'S 2023</p>

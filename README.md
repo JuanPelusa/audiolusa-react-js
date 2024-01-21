@@ -8,6 +8,12 @@ Sale, advice and services of hi-fi and high end audio.
 personalized installations and home cinema design.
 The site provides simple and intuitive navigability. easy and descriptive specification of the products and simple way to carry out the purchase.
 
+# Project Development
+
+I choose Boostrap as the main framework for he's easy way to configure the alignment and the placing of elements.
+For images I prefer a local storage for more organization and quick access.
+Scss was the stylesheet choosen because I feel very comfortable with nesting them.
+
 # React + Vite
 
 Fully develop with React + Vite. Provides an easy way to have a great development experience without configurations.
@@ -41,8 +47,8 @@ git@github.com: JuanPelusa/audiolusa-react-js. Git
 (You need to have public SSH keys in your GitHub for the link above),
 gh repo clone JuanPelusa/audiolusa-react-js.
 
-Once you do the first step, open the project folder and type "npm run dev" on the vscode terminal to see the project on http://localhost:5173/.
-Make sure you have Node.js and npm pre-installed on your machine before running the application.
+Once you do the first step, open the project folder and run "npm install", then run "npm run dev" on the vscode terminal to see the project on http://localhost:5173/.
+Make sure you have Node.js pre-installed on your machine before running the application.
 
 # Documentation
 

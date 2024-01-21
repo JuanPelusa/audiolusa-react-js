@@ -13,7 +13,7 @@ import AboutUs from './Components/AboutUs/AboutUs'
 import Contact from './Components/Contact/Contact'
 import Parent from './Components/Parent/Parent'
 import ParentList from './Components/ParentList/ParentList'
-import Sign from './Components/Sign/Sing'
+import SignUp from './Components/signUp/signUp'
 
 function App() {
   return (
@@ -28,9 +28,9 @@ function App() {
                     <Route path={'/services'} element={<Services />} /> 
                       <Route path={'/about'} element={<AboutUs />} />
                         <Route path={'/contact'} element={<Contact />} />
-                      <Route path={'/sign'} element={<Sign />} />
                     <Route path={'/cart'} element={ <Cart /> } />
-                  <Route path={'/checkout'} element={<CheckOut />} />                 
+                  <Route path={'/checkout'} element={<CheckOut />} />
+                  <Route path={'/signup'} element={<SignUp />} />            
                 <Route path={'*'} element={ <Error /> } />
               </Routes>
           <Footer />

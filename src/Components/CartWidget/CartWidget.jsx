@@ -7,7 +7,7 @@ const CartWidget = () => {
   return (
     <div className="container">
       <Link to={'/cart'} className="nav-link cartIcon"><img className="navbar-cart" 
-                src={CartIcon} alt="" />              
+                src={CartIcon} alt="" height={25} />              
         <span className="position-absolute top-20 translate-middle badge rounded-pill bg-danger">{totalProducts() ||cart}</span>
       </Link>
     </div>

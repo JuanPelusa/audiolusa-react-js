@@ -1,8 +1,11 @@
 import { useState } from 'react';
 import { auth } from '../Firebase/config';
-import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth';
-import Modal from 'react-bootstrap/Modal';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { Button, Modal } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import User from "/images/user-128.png"
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Sign() {
 
@@ -16,28 +19,43 @@ function Sign() {
   const signIn = (e) => {
     e.preventDefault();
     signInWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      console.log(userCredential)
-    })
-    .catch((error) =>{
-      console.log(error);
-    })
-  }
-  const signUp = (e) => {
-    e.preventDefault();
-    createUserWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      console.log(userCredential)
-    })
-    .catch((error) =>{
-      console.log(error);
-    })
-  }
+      .then((userCredential) => {
+        console.log(userCredential);
+        setEmail('');
+        setPassword('');
+        console.log("sign in successful");
+        handleClose(); 
+        toast.warning('Sign In Successful', {
+          autoClose: 2000,
+          position: "top-center",
+          hideProgressBar: true,
+          style: {
+            backgroundColor: "#ff972f",
+            border: "2px solid green",
+            color: "white",
+          }
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+        toast.error(`Sign In Failed: ${error.message}`, {
+          autoClose: 2000,
+          position: "top-center",
+          hideProgressBar: true,
+          style: {
+            backgroundColor: "#ff2f2f",
+            border: "2px solid green",
+            color: "white",
+          }
+        });
+      });
+  };
 
   return (
     <>
-      <Link variant="primary" onClick={handleShow} style={{textDecoration: 'none', color: 'black', fontWeight: 'normal'}}>
-        Sign
+      <Link variant="primary" onClick={handleShow} style={{textDecoration: 'none', color: 'black', fontWeight: 'lighter', }}>
+        <span className="signTitle d-none d-xl-block">Sign</span>
+        <span><img src={User} alt="" width={35} className='d-xl-none' /></span>
       </Link>
       <Modal
         show={show}
@@ -45,10 +63,11 @@ function Sign() {
         backdrop="static"
         keyboard={false}
       >
-        <Modal.Header closeButton>
-          <Modal.Title><h1 className="fs-2">Login</h1></Modal.Title>
-        </Modal.Header>
-          <Modal.Body>
+        <Modal.Body>
+          <Button id="btn-close" onClick={handleClose}><p>X</p></Button>
+            <div>
+              <h1 className="modal-header">Login</h1>
+            </div>
             <form onSubmit={signIn}>
               <div className="form-outline mb-3">
                 <input type="email" id="signInput" className="form-control email" placeholder="email" value={email} onChange={(e) => setEmail(e.target.value)} />
@@ -60,27 +79,7 @@ function Sign() {
                 </div>
               <button type="submit" className="btn btn-primary btn-block mb-4 signInBtn" onClick={handleClose}>Sign in</button>
             </form>
-              <div className="sign hr-lines">
-                <h4 className="fs-6">Or</h4>
-              </div>
-            <div className="register">
-              <h2 className="register-title fs-2">Register</h2>
-            </div>
-          <form onSubmit={signUp}>
-            <div className="form-outline mb-3">
-              <input type="text" className="form-control full" placeholder="name"  />
-              <label className="sign-label bk-first">Full name</label>
-            </div>
-              <div className="form-outline mb-3">
-                <input type="email" className="form-control emailR" placeholder="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-                <label className="sign-label bk-first">Enter your email</label>
-              </div>
-              <div className="form-outline mb-3">
-                <input type="password" className="form-control passR" placeholder="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-                <label className="sign-label bk-first">password</label>
-              </div>
-            <button type="submit" className="btn btn-primary btn-block mb-4 signInBtn" onClick={handleClose}>Sign up</button>
-          </form>
+          <Link to={'/signup'} type="submit" className="btn btn-primary btn-block mb-4 signInBtn" onClick={handleClose}>Sign Up</Link> 
         </Modal.Body>
       </Modal>
     </>
