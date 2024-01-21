@@ -11,7 +11,6 @@ The site provides simple and intuitive navigability. easy and descriptive specif
 # Project Development
 
 I choose Boostrap as the main framework for he's easy way to configure the alignment and the placing of elements.
-For images I prefer a local storage for more organization and quick access.
 Scss was the stylesheet choosen because I feel very comfortable with nesting them.
 
 # React + Vite
