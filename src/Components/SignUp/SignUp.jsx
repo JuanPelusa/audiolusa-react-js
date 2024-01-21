@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 import { auth } from '../Firebase/config';
 import { createUserWithEmailAndPassword, sendEmailVerification, onAuthStateChanged } from 'firebase/auth';
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import { Button, Container, Form } from 'react-bootstrap';
 
 function SignUp() {
 
+    const [name, setName] = useState('');
+    const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [user, setUser] = useState(null);
@@ -28,6 +28,8 @@ function SignUp() {
         console.log(userCredential)
         sendEmailVerification(auth.currentUser)
             console.log('Verification email sent');
+            setName('');
+            setLastName('');
             setEmail('');
             setPassword('')
         })
@@ -43,11 +45,11 @@ function SignUp() {
                 </div>
                 <Form onSubmit={signUp}>
                     <div className="form-outline mb-3">
-                        <Form.Control type="text" className="form-control passR sp" />
+                        <Form.Control type="text" className="form-control passR sp" value={name} onChange={(e) => setName(e.target.value)} />
                         <Form.Label id="sign-label">First Name</Form.Label>
                     </div>
                         <div className="form-outline mb-3">
-                            <Form.Control type="text" className="form-control full sp" />
+                            <Form.Control type="text" className="form-control full sp" value={lastName} onChange={(e) => setLastName(e.target.value)} />
                             <Form.Label id="sign-label">Last Name</Form.Label>
                         </div>
                             <div className="form-outline mb-3">

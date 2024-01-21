@@ -26,7 +26,7 @@ const AuthDetails = () => {
     signOut(auth)
       .then(() => {
         console.log("sign out successful");
-        toast.success('Sign Out Successful', {
+        toast.success('Sign Out Successfuly', {
           position: "top-center",
           autoClose: 2000,
           hideProgressBar: true,

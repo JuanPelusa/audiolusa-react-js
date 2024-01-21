@@ -91,20 +91,17 @@ export const CheckOut = () =>{
               <div className="form-items">
                 <form onSubmit={formManager}>
                   {cart.map((product)=>(
-                    <div>
                     <div key={product.id} className="productsResume">
                       <p>{''} {product.name}</p>
                         <p>Qty: {product.quantity}</p>
                       <p>{currencyType} {product.price + Tax()}.-</p>
                     </div>
-                    </div>
                     )
-
-                  )}
-                  <div className="productsResume" style={{display: "flex"}}>
+                  )}   
+                  <div className="productsResume">
                       <p>Total: </p>
-                      <p>{currencyType} {totalPrice() + Tax()}</p>
-                    </div>
+                      <p>{currencyType} {totalPrice() + Tax()}.-</p>
+                    </div>           
                   <div className="p-2">
                     <label className="lab-check form-label">Name</label>
                     <input className="input-check form-control sign" type="text" value={name} onChange={(e) => setName(e.target.value)}
