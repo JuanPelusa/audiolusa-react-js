@@ -6,7 +6,7 @@ const ParentList = () => (
   <>
     <ItemListContainer />
     <div>
-    <Home />
+      <Home />
     </div>
   </>
 );

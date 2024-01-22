@@ -1,10 +1,7 @@
 //* Form Contact *//
 
-#contact-block {
-    border: 1px solid rgba(0, 0, 0, 0.655);
-    border-radius: 10px;
-}
 #contactBlock {
+    border-radius: 9px;
     h3 {
         color: white;
         margin: 7px 10px 12px 10px;
@@ -21,9 +18,6 @@
         margin: 0px 0px 10px 0px;   
     }
 }
-.single-form{
-    background: #6a6a6a;
-}
 .right, .left {
 	position: relative;
 }
@@ -35,16 +29,6 @@
 .form-title {
     display: flex;
     justify-content: center;
-}
-.form-text {
-    width: 90%;
-    font-size: $medium ;
-    @include mobile-index {
-        font-size: $small;
-    }
-}
-.form-label {
-    color: #fff;
 }
 .btn, .btn-primary button {
     display: flex;

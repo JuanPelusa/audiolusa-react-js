@@ -36,19 +36,19 @@ function Sign() {
           }
         });
       })
-      .catch((error) => {
-        console.log(error);
+    .catch((error) => {
+      console.log(error);
         toast.error(`Sign In Failed: ${error.message}`, {
           autoClose: 2000,
           position: "top-center",
           hideProgressBar: true,
-          style: {
-            backgroundColor: "#ff2f2f",
-            border: "2px solid green",
-            color: "white",
-          }
-        });
+        style: {
+          backgroundColor: "#ff2f2f",
+          border: "2px solid green",
+          color: "white",
+        }
       });
+    });
   };
 
   return (

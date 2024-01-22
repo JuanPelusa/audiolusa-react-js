@@ -13,16 +13,16 @@ function NavBar() {
   return (
     <header>
       <Nav>
-          <Container fluid className='top-header'>
-            <Link to="/contact" className='nav-link'>Contact</Link>
-              <Link to="/about" className='nav-link'>About Us</Link>
-              <Link to="/services" className='nav-link'>Services</Link>
-              <Sign />
-          </Container>
-          <Container fluid className='topHeaderUser'>
-            <AuthDetails />
-          </Container>
-          <ToastContainer />
+        <Container fluid className='top-header'>
+          <Link to="/contact" className='nav-link'>Contact</Link>
+            <Link to="/about" className='nav-link'>About Us</Link>
+            <Link to="/services" className='nav-link'>Services</Link>
+          <Sign />
+        </Container>
+        <Container fluid className='topHeaderUser'>
+          <AuthDetails />
+        </Container>
+        <ToastContainer />
       </Nav>
       <Navbar collapseOnSelect expand="xl" className="bg-body-tertiary" id='navbar'>
         <Container fluid className='header-one'>

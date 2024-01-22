@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-import { auth } from '../Firebase/config';
+import { auth, db } from '../Firebase/config';
 import { createUserWithEmailAndPassword, sendEmailVerification, onAuthStateChanged, updateProfile } from 'firebase/auth';
+import { collection, addDoc } from 'firebase/firestore';
 import { Button, Container, Form } from 'react-bootstrap';
 
 function SignUp() {
@@ -29,13 +30,24 @@ function SignUp() {
             await updateProfile(userCredential.user, {
                 displayName: `${name} ${lastName}`,
             });
+            
             await sendEmailVerification(auth.currentUser);
-            console.log('Verification email sent');
+            console.log('Verification email sent')
+            
+            await addDoc(collection(db, 'users'), {
+                uid: userCredential.user.uid,
+                name: name,
+                lastName: lastName,
+                email: email,
+            });
+            console.log('User Information:', userCredential.user);
+
             setName('');
             setLastName('');
             setEmail('');
             setPassword('');
-        } catch (error) {
+        } 
+        catch (error) {
             console.error('Error creating user or sending verification email', error);
         }
     };

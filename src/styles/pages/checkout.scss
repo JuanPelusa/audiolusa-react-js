@@ -1,6 +1,6 @@
 //* Form Contact *//
 
-.form-area {
+.formArea {
     display: flex;
     justify-content: center;
     margin: 20px 0px 202px 0px;
@@ -10,7 +10,7 @@
     width: 50%;
     border: 1px solid rgba(0, 0, 0, 0.655);
     border-radius: 10px;
-    h3{
+    h3, h6 {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -40,12 +40,9 @@
     align-items: center;
     background: #6a6a6a;
 }
-
-.form-control {
-	border: 1px solid #000000;
-}
 .form-text {
-    font-size: $small ;
+    width: 90%;
+    font-size: $medium ;
     @include mobile-index {
         font-size: $small;
     }
@@ -53,10 +50,8 @@
 .form-label {
     display: flex;
     justify-content: center;
-
     color: #fff;
 }
-
 .form-confirm {
     display: flex;
     justify-content: center;
