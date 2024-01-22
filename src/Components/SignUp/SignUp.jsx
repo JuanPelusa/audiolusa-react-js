@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { auth } from '../Firebase/config';
-import { createUserWithEmailAndPassword, sendEmailVerification, onAuthStateChanged } from 'firebase/auth';
+import { createUserWithEmailAndPassword, sendEmailVerification, onAuthStateChanged, updateProfile } from 'firebase/auth';
 import { Button, Container, Form } from 'react-bootstrap';
 
 function SignUp() {
@@ -21,21 +21,24 @@ function SignUp() {
         };
     }, []);
 
-    const signUp = (e) => {
+    const signUp = async (e) => {
         e.preventDefault();
-        createUserWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-        console.log(userCredential)
-        sendEmailVerification(auth.currentUser)
+        try {
+            const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+            console.log(userCredential);
+            await updateProfile(userCredential.user, {
+                displayName: `${name} ${lastName}`,
+            });
+            await sendEmailVerification(auth.currentUser);
             console.log('Verification email sent');
             setName('');
             setLastName('');
             setEmail('');
-            setPassword('')
-        })
-        .catch((error) => {
-        console.error('Error sending verification email', error);})
-    }
+            setPassword('');
+        } catch (error) {
+            console.error('Error creating user or sending verification email', error);
+        }
+    };
 
     return (
         <Container className='modal-header signUp'>

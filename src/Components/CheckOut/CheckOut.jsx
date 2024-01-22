@@ -10,6 +10,7 @@ export const CheckOut = () =>{
   const [lastname, setLastname] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
+  const [success, setSuccess] = useState('');
   const [error, setError] = useState('');
   const [orderId, setOrderId] = useState('');
   const [message, setMessage] = useState('');
@@ -53,6 +54,8 @@ export const CheckOut = () =>{
         addDoc(collection(db, 'orders'), order)
       . then((docRef)=>{
           setOrderId(docRef.id);
+          console.log('Order confirmed:', order);
+          console.log('Order ID:', docRef.id);
         clearCart()
         Swal.fire({
           icon: "success",

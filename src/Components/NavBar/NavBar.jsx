@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import CartWidget from '../CartWidget/CartWidget'
 import Sign from '../Sign/Sing'
 import AuthDetails from '../SingDetails/SignDetails'
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
