@@ -57,6 +57,9 @@
         width: auto;
         margin: auto;
     }
+    @include desktop {
+        flex-direction: column;
+    }
 }
 .product-card {
     display: flex;
@@ -130,6 +133,11 @@
     button {
         margin-top: 5px;
     }
+    @include desktop {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 }
 .backButtonsContain, .backButtons {
     display: flex;
@@ -139,6 +147,9 @@
     text-decoration: none;
     margin: 0px 5px 0px 5px;
     font-weight: 600;
+    @include desktop {
+        margin-top: 10px;
+    }
 }
 .info-detail {
     display: flex;
@@ -147,6 +158,10 @@
     align-items: center;
     padding: 0px 70px 0px 70px;
     width: 60%;
+    @include desktop {
+        width: 100%;
+        padding: 0px 5px 0px 5px;
+    }
 }
 .counter-container {
     display: flex;
