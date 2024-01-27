@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { auth } from '../Firebase/config';
 import { signInWithEmailAndPassword } from 'firebase/auth';
-import { Button, Modal } from 'react-bootstrap';
+import { Button, Form, Modal } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import User from "/images/user-128.png"
 import { toast } from 'react-toastify';
@@ -53,7 +53,7 @@ function Sign() {
 
   return (
     <>
-      <Link variant="primary" onClick={handleShow} style={{textDecoration: 'none', color: 'black', fontWeight: 'lighter', }}>
+      <Link to={'/'} variant="primary" onClick={handleShow} style={{textDecoration: 'none', color: 'black', fontWeight: 'lighter', }}>
         <span className="signTitle d-none d-xl-block">Sign</span>
         <span><img src={User} alt="" width={35} className='d-xl-none' /></span>
       </Link>
@@ -68,17 +68,17 @@ function Sign() {
             <div>
               <h1 className="modal-header">Login</h1>
             </div>
-            <form onSubmit={signIn}>
+            <Form onSubmit={signIn}>
               <div className="form-outline mb-3">
-                <input type="email" id="signInput" className="form-control email" placeholder="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-                <label className="sign-label bk-first">Email address</label>
+                <Form.Control type="email" id="signInput" className="form-control email" placeholder="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                <Form.Label className="sign-label bk-first">Email address</Form.Label>
               </div>
                 <div className="form-outline mb-3">
-                  <input type="password" className="form-control pass" placeholder="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-                  <label className="sign-label bk-first">Password</label>
+                  <Form.Control type="password" className="form-control pass" placeholder="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                  <Form.Label className="sign-label bk-first">Password</Form.Label>
                 </div>
-              <button type="submit" className="btn btn-primary btn-block mb-4 signInBtn" onClick={handleClose}>Sign in</button>
-            </form>
+              <Button type="submit" className="btn btn-primary btn-block mb-4 signInBtn" onClick={handleClose}>Sign in</Button>
+            </Form>
           <Link to={'/signup'} type="submit" className="btn btn-primary btn-block mb-4 signInBtn" onClick={handleClose}>Sign Up</Link> 
         </Modal.Body>
       </Modal>

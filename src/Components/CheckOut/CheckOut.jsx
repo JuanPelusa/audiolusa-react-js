@@ -22,12 +22,13 @@ export const CheckOut = () =>{
   useEffect(() => {
     if (user) {
       setEmail(user.email);
+      setEmailConfirm(user.email);
     }
   }, [user]);
 
   const formManager = (event) =>{
     event.preventDefault();
-      if(!name || !lastname || !phone || !email || !emailConfirm){
+      if((!user && !name) || (!user && !lastname) || (!user && !phone) || (!user && !email) || (!user && !emailConfirm)){
         setError('Please complete all fields');
       return;
     }
@@ -38,12 +39,13 @@ export const CheckOut = () =>{
     const order ={
       items: cart.map((product)=>({
         id: product.id,
+        image: product.image,
         name: product.name,
         quantity: product.quantity,
       })),
       total: total,
       date: new Date(),
-      name: 
+      name,
       lastname,
       phone,
       email,
@@ -108,7 +110,8 @@ export const CheckOut = () =>{
                 <form onSubmit={formManager}>
                   {cart.map((product)=>(
                     <div key={product.id} className="productsResume">
-                      <p>{''} {product.name}</p>
+                      <img src={product.image} alt={product.name} width={35}/>
+                      <p>{product.name}</p>
                         <p>Qty: {product.quantity}</p>
                       <p>{currencyType} {product.price + Tax()}.-</p>
                     </div>
@@ -117,23 +120,31 @@ export const CheckOut = () =>{
                   <div className="productsResume">
                     <p>Total: </p>
                     <p>{currencyType} {totalPrice() + Tax()}.-</p>
-                  </div>           
+                  </div>  
+                  {!user && (         
                     <div className="p-2">
                       <label className="lab-check form-label">Name</label>
                       <input className="input-check form-control sign" type="text" value={name} onChange={(e) => setName(e.target.value)}/>
                     </div>
+                    )} 
+                    {!user && (
                       <div className="p-2">
                         <label className="lab-check form-label">Lastname</label>
                         <input className="input-check form-control" type="text" value={lastname} onChange={(e) => setLastname(e.target.value)}/>
                       </div>
+                      )} 
+                      {!user && (
                         <div className="p-2">
                           <label className="lab-check form-label">Phone number</label>
                           <input className="input-check form-control" type="number" value={phone} onChange={(e) => setPhone(e.target.value)}/>
                         </div>
+                        )} 
+                        {!user && (
                       <div className="p-2">
                         <label className="lab-check form-label">Email</label>
-                        <input className="input-check form-control" type="email" value={email} onChange={(e) => setEmail(e.target.value)} readOnly={user ? true : false}/>
+                        <input className="input-check form-control" type="email" value={email} onChange={(e) => setEmail(e.target.value)}/>
                       </div>
+                      )} 
                       {!user && (
                       <div className="p-2">
                         <label className="lab-check form-label">Confirm Email</label>

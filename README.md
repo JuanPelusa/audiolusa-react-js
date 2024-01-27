@@ -8,6 +8,9 @@ Sale, advice and services of hi-fi and high end audio.
 personalized installations and home cinema design.
 The site provides simple and intuitive navigability. easy and descriptive specification of the products and simple way to carry out the purchase.
 
+Auth service functional with sign up, sign in. 
+Account info and my orders when you are logged in clicking over the email. 
+
 # Project Development
 
 I choose Boostrap as the main framework for he's easy way to configure the alignment and the placing of elements.

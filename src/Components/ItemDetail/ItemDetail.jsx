@@ -17,7 +17,7 @@ const ItemDetail = ({ item }) => {
   }
 
   const goBack = () => {
-    navigate(-1); // This navigates back one step in the history
+    navigate(-1);
   };
 
   return (

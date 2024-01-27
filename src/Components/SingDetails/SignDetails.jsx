@@ -9,7 +9,7 @@ const AuthDetails = () => {
   const [authUser, setAuthUser] = useState(null);
 
   useEffect(() => {
-    const listen = onAuthStateChanged(auth, (user) => {
+    const userLog = onAuthStateChanged(auth, (user) => {
       if (user) {
         setAuthUser(user);
       } else {
@@ -18,7 +18,7 @@ const AuthDetails = () => {
     });
 
     return () => {
-      listen();
+      userLog();
     };
   }, []);
 
@@ -56,8 +56,8 @@ const AuthDetails = () => {
     <div>
       {authUser ? (
         <>
-          <span>{authUser.email}</span>
-          <Link id="outButton" onClick={userSignOut}>/Sign Out➡️</Link>
+          <Link to={'/account'} style={{textDecoration: 'none', color: 'black'}}><span>{authUser.email}</span></Link>
+          <Link to={'/'} id="outButton" onClick={userSignOut}>/Sign Out➡️</Link>
         </>
       ) : (
         <br />

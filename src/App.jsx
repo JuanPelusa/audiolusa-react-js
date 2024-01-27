@@ -11,33 +11,34 @@ import AboutUs from './Components/AboutUs/AboutUs'
 import Contact from './Components/Contact/Contact'
 import Parent from './Components/Parent/Parent'
 import ParentList from './Components/ParentList/ParentList'
-import SignUp from './Components/signUp/signUp'
+import SignUp from './Components/SignUp/SignUp'
 import { AuthProvider } from './Components/AuthContext/AuthContext'
+import Account from './Components/Account/Account'
 
 function App() {
   return (
     <>
       <BrowserRouter>
-      <AuthProvider>
+        <AuthProvider>
           <CartProvider>
             <NavBar />
-                <Routes>
-                  <Route path={'/'} element={ <Parent /> } />
-                    <Route path={'/category/:id'} element={ <ParentList /> } />
-                      <Route path={'/item/:id'} element={ <ItemDetailContainer /> } />
+              <Routes>
+                <Route path={'/'} element={ <Parent /> } />
+                  <Route path={'/category/:id'} element={ <ParentList /> } />
+                    <Route path={'/item/:id'} element={ <ItemDetailContainer /> } />
                       <Route path={'/services'} element={<Services />} /> 
                         <Route path={'/about'} element={<AboutUs />} />
-                        <Route path={'/contact'} element={<Contact />} />
-                      <Route path={'/cart'} element={ <Cart /> } />
-                    <Route path={'/checkout'} element={<CheckOut />} />
-                    <Route path={'/signup'} element={<SignUp />} />            
-                  <Route path={'*'} element={ <Error /> } />
-                </Routes>
+                          <Route path={'/contact'} element={<Contact />} />
+                        <Route path={'/cart'} element={ <Cart /> } />
+                      <Route path={'/checkout'} element={<CheckOut />} />
+                    <Route path={'/signup'} element={<SignUp />} /> 
+                  <Route path={'/account'} element={<Account />} />       
+                <Route path={'*'} element={ <Error /> } />
+              </Routes>
             <Footer />
           </CartProvider>
-          </AuthProvider>
-        </BrowserRouter>
-      
+        </AuthProvider>
+      </BrowserRouter>
     </>
   )
 }
