@@ -104,6 +104,7 @@ function SignUp() {
                         <Form.Control type="password" className="form-control passR sp" value={password} onChange={(e) => setPassword(e.target.value)} />
                         <Form.Label id="sign-label">Password</Form.Label>
                     </div>
+                    {error && <p>{error}</p>}
                     <Button type="submit" className="btn btn-primary btn-block mb-4 signInBtn">Sign Up</Button>
                 </Form>
             </div>

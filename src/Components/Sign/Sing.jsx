@@ -11,6 +11,7 @@ function Sign() {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -49,6 +50,7 @@ function Sign() {
         }
       });
     });
+    setError('');
   };
 
   return (
@@ -77,6 +79,7 @@ function Sign() {
                   <Form.Control type="password" className="form-control pass" placeholder="password" value={password} onChange={(e) => setPassword(e.target.value)} />
                   <Form.Label className="sign-label bk-first">Password</Form.Label>
                 </div>
+                {error && <p>{error}</p>}
               <Button type="submit" className="btn btn-primary btn-block mb-4 signInBtn" onClick={handleClose}>Sign in</Button>
             </Form>
           <Link to={'/signup'} type="submit" className="btn btn-primary btn-block mb-4 signInBtn" onClick={handleClose}>Sign Up</Link> 

@@ -9,7 +9,11 @@ personalized installations and home cinema design.
 The site provides simple and intuitive navigability. easy and descriptive specification of the products and simple way to carry out the purchase.
 
 Auth service functional with sign up, sign in. 
-Account info and my orders when you are logged in clicking over the email. 
+This creates a collection called "users" where the data of each user who registers is stored.
+Account information and my orders when logged in by clicking on the email.
+
+Contact page allows everyone who navigates the site to send messages with name, email and message to get any info with the site response.
+This contact message is stored in a collection named "contactMessages".
 
 # Project Development
 
