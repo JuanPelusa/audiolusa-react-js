@@ -5,6 +5,8 @@ import { collection, addDoc } from 'firebase/firestore';
 import { db } from '../Firebase/config'
 import Store from '/images/store.webp'
 import Fluff from '/images/fluff-std.png'
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function Contact() {
@@ -27,6 +29,16 @@ const contactUs = async (e) =>{
       email: email,
       message: message,
       timestamp: new Date(),
+    });
+    toast.success('Message sent, we contact you as soon as possible', {
+      autoClose: 2000,
+      position: "top-center",
+      hideProgressBar: true,
+      style: {
+        backgroundColor: "#0c3ebd",
+        border: "2px solid green",
+        color: "white",
+      }
     });
 
     console.log('Document written with ID: ', docRef.id);
