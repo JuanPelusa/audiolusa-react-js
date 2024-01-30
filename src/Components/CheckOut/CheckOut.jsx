@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect } from "react";
+import { Button, Container, Row, Form } from "react-bootstrap";
 import { useCartContext } from "../Context/CartContext"
 import {getFirestore, collection, addDoc, updateDoc, doc, getDoc} from 'firebase/firestore';
 import { useAuth } from "../AuthContext/AuthContext";
@@ -100,14 +101,14 @@ export const CheckOut = () =>{
 
   return(
     <div className="formArea">
-      <div className="container formArea">
-        <div id="contact-block" className="row single-form g-0" data-aos="zoom-in-up">
+      <Container className="formArea">
+        <Row id="contact-block" className="single-form g-0" data-aos="zoom-in-up">
           <div className="mb-2 p-2">
             <div id="contact-form">
               <h3>Complete to confirm purchase</h3>
               <h6>{user ? `Buy as ${user.email}` : ''}</h6>
               <div className="form-items">
-                <form onSubmit={formManager}>
+                <Form onSubmit={formManager}>
                   {cart.map((product)=>(
                     <div key={product.id} className="productsResume">
                       <img src={product.image} alt={product.name} width={35}/>
@@ -123,44 +124,44 @@ export const CheckOut = () =>{
                   </div>  
                   {!user && (         
                     <div className="p-2">
-                      <label className="lab-check form-label">Name</label>
-                      <input className="input-check form-control sign" type="text" value={name} onChange={(e) => setName(e.target.value)}/>
+                      <Form.Label className="lab-check form-label">Name</Form.Label>
+                      <Form.Control className="input-check form-control sign" type="text" value={name} onChange={(e) => setName(e.target.value)}/>
                     </div>
                     )} 
                     {!user && (
                       <div className="p-2">
-                        <label className="lab-check form-label">Lastname</label>
-                        <input className="input-check form-control" type="text" value={lastname} onChange={(e) => setLastname(e.target.value)}/>
+                        <Form.Label className="lab-check form-label">Lastname</Form.Label>
+                        <Form.Control className="input-check form-control" type="text" value={lastname} onChange={(e) => setLastname(e.target.value)}/>
                       </div>
                       )} 
                       {!user && (
                         <div className="p-2">
-                          <label className="lab-check form-label">Phone number</label>
-                          <input className="input-check form-control" type="number" value={phone} onChange={(e) => setPhone(e.target.value)}/>
+                          <Form.Label className="lab-check form-label">Phone number</Form.Label>
+                          <Form.Control className="input-check form-control" type="number" value={phone} onChange={(e) => setPhone(e.target.value)}/>
                         </div>
                         )} 
                         {!user && (
                       <div className="p-2">
-                        <label className="lab-check form-label">Email</label>
-                        <input className="input-check form-control" type="email" value={email} onChange={(e) => setEmail(e.target.value)}/>
+                        <Form.Label className="lab-check form-label">Email</Form.Label>
+                        <Form.Control className="input-check form-control" type="email" value={email} onChange={(e) => setEmail(e.target.value)}/>
                       </div>
                       )} 
                       {!user && (
                       <div className="p-2">
-                        <label className="lab-check form-label">Confirm Email</label>
-                        <input className="input-check form-control" type="email" value={emailConfirm} onChange={(e) => setEmailConfirm(e.target.value)}/>
+                        <Form.Label className="lab-check form-label">Confirm Email</Form.Label>
+                        <Form.Control className="input-check form-control" type="email" value={emailConfirm} onChange={(e) => setEmailConfirm(e.target.value)}/>
                       </div>
                       )} 
                     {error && <p>{error}</p>}
                   <div className="form-confirm mb-2">
-                    <button type="submit" className="button">Confirm</button>
+                    <Button type="submit" className="button">Confirm</Button>
                   </div>
-                </form>
+                </Form>
               </div>
             </div>
           </div>
-        </div>
-      </div>
+        </Row>
+      </Container>
     </div>
   );
 }

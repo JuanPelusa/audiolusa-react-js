@@ -4,11 +4,11 @@ import X from '/images/x-social-media-black-icon.png'
 import Insta from  '/images/black_instagram_icon.png'
 import YouTube from '/images/black_youtube_icon.png'
 import FluffBig from '/images/fluff-std-logo-big.png'
+import { Container } from 'react-bootstrap'
 
 function Footer() {
   return (
-    <footer>
-      <div className="container-fluid foot">
+      <Container fluid className="foot">
         <div className="social">    
           <Link to="https://es-la.facebook.com/" target="_blank"><img src={Facebook} 
             alt="facebook" className="facelogo" /></Link>
@@ -27,8 +27,7 @@ function Footer() {
         <div className="copy">
           <p>©️JP'S 2023</p>
         </div>
-      </div>
-    </footer>
+      </Container>
   )
 }
 

@@ -1,8 +1,10 @@
 import React, { useState} from "react";
 import { Link } from "react-router-dom";
-import { Button, Container, Form } from 'react-bootstrap';
+import { Button, Container, Form, Row } from 'react-bootstrap';
 import { collection, addDoc } from 'firebase/firestore';
 import { db } from '../Firebase/config'
+import Store from '/images/store.webp'
+import Fluff from '/images/fluff-std.png'
 
 
 function Contact() {
@@ -41,9 +43,9 @@ const contactUs = async (e) =>{
 
 
     return (
-        <>
+      <>
         <Container>
-        <div className="row contact">
+        <Row className="contact">
           <div className="main-contents">
             <span>-</span>
             <h1>Contact Us</h1>
@@ -54,7 +56,7 @@ const contactUs = async (e) =>{
                 <div id="contactBlock" className="row single-form g-0" data-aos="zoom-in-up">
                   <div className="col-sm-12 col-lg-6">
                     <div className="img-form">
-                      <img className="img-fluid contactImgForm" src="../images/store.webp" alt="store space 2" />
+                      <img className="img-fluid contactImgForm" src={Store} alt="store space 2" />
                     </div>
                   </div>
                   <div className="col-sm-12 col-lg-6">
@@ -66,15 +68,15 @@ const contactUs = async (e) =>{
                         <Form onSubmit={contactUs} style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
                         <div className="mb-2">
                           <Form.Label className="form-label">Name</Form.Label>
-                          <Form.Control type="text" id="form-control" placeholder="Type your Name" value={name} onChange={(e) => setName(e.target.value)}/>
+                          <Form.Control type="text" placeholder="Type your Name" value={name} onChange={(e) => setName(e.target.value)}/>
                         </div>
                         <div className="mb-2">
                           <Form.Label className="form-label">Email address</Form.Label>
-                          <Form.Control type="email" id="form-control" placeholder="Now tell us your Email address" value={email} onChange={(e) => setEmail(e.target.value)}/>
+                          <Form.Control type="email" placeholder="Now tell us your Email address" value={email} onChange={(e) => setEmail(e.target.value)}/>
                         </div>
                         <div className="mb-2">
                           <Form.Label className="form-label">Your message</Form.Label>
-                          <Form.Control type="message" id="form-control" placeholder="What do you want to now" value={message} onChange={(e) => setMessage(e.target.value)} />
+                          <Form.Control type="message" placeholder="What do you want to now" value={message} onChange={(e) => setMessage(e.target.value)} />
                         </div>
                         {error && <p>{error}</p>}
                         <Button type="submit">Submit</Button>
@@ -85,7 +87,7 @@ const contactUs = async (e) =>{
                 </div>
               </Container>
             </div>
-          </div>
+          </Row>
           <Container>
             <div className="col map-container">
               <div className="row" >
@@ -103,7 +105,7 @@ const contactUs = async (e) =>{
               <p className="card-text">Simpson's house</p>
             </div>
               <div className="col logo-audiolusa">
-                <Link to={'/'}><img src="../images/fluff-std.png" alt="" /></Link>
+                <Link to={'/'}><img src={Fluff} alt="" /></Link>
               </div>
             <div className="col card-title-b">
               <p className="card-text">Call Us</p>

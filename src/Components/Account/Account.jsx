@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { getFirestore, collection, getDocs, where, query } from 'firebase/firestore';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from '../Firebase/config';
+import { Container } from 'react-bootstrap';
 const currencyType = "usd";
 
 const Account = () => {
@@ -76,7 +77,7 @@ const Account = () => {
     }, []);
 
     return (
-        <div className='container account'>
+        <Container className='account'>
             <div>
             <h2>Account info</h2>
             </div>
@@ -121,7 +122,7 @@ const Account = () => {
                     <p>Nothing around here🙁</p>
                 )}
             </div>
-        </div>
+        </Container>
     );
 };
 

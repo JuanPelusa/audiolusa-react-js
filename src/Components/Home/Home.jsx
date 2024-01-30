@@ -1,4 +1,5 @@
 import React from 'react'
+import { Container, Row } from 'react-bootstrap'
 import Focal from '/images/brand focal.gif'
 import Klipsch from '/images/klipsch.png'
 import Polk from '/images/polkaudio.png'
@@ -15,9 +16,9 @@ const Home = () => {
   return (
     <div className="begin-site">
       <div className="b-divider"></div>
-        <div className="container-fluid text-center" data-aos="fade-up" data-aos-duration="300" data-aos-easing="ease-in-out">
+        <Container fluid className="text-center" data-aos="fade-up" data-aos-duration="300" data-aos-easing="ease-in-out">
           <h1>- Brands we proudly sell -</h1>
-          <div className="row">
+          <Row>
             <div className="col logo" data-aos="fade-up">
               <img src={Focal} alt="Focal Logo" />
             </div>
@@ -51,8 +52,8 @@ const Home = () => {
             <div className="col logo" data-aos="fade-up">
               <img src={Onkyo} alt="Onkyo logo" />
             </div>
-          </div>
-        </div>       
+          </Row>
+        </Container>       
     </div>
   )
 }

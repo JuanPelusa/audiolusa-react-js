@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import ItemCart from '../ItemCart/ItemCart';
 import { useCartContext } from '../Context/CartContext';
+import { Button, Container } from 'react-bootstrap';
 const currencyType = "usd";
 
 const Cart = () => {
@@ -18,13 +19,13 @@ const Cart = () => {
 
 return (
   <>
-    <div className='container shopCart'>
+    <Container className='shopCart'>
       <h2>- Cart -</h2>
-    </div>
+    </Container>
       {cart.map((product) => (
         <ItemCart key={product.id} product={product} />
       ))}      
-      <div className="container basket">
+      <Container className="basket">
         <div className="right-basket">
           <h2>- Checkout -</h2>
             <div>
@@ -36,11 +37,11 @@ return (
               <h5>{currencyType} {totalPrice() + Tax()}.-</h5>
             </div>
           <Link to="/checkout">
-            <button id="buyBasket" className="buyButton">Procced to checkout</button>
+            <Button id="buyBasket" className="buyButton">Procced to checkout</Button>
           </Link>
           <Link to='/' className='addMore'>⬅️Continue Shopping</Link>
         </div>
-      </div>
+      </Container>
     </>
   );
 };
